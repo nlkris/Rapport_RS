@@ -18,13 +18,14 @@ knitr::opts_chunk$set(echo = TRUE)
 ### Chapitre 1 : Vocabulaire et Fonctions
 
 Les marchés financiers assurent trois rôles primordiaux :
+
 1.  **Allocation intertemporelle de Liquidités (Cash Flows)** : Transfert de pouvoir d'achat du présent vers le futur (épargne) et inversement (emprunt).
 
 2.  **Allocation et Réallocation des Risques** : Distribution optimale de l'incertitude entre les agents.
 3.  **Efficience et Information** : Les prix servent de signaux. Sous l'**Hypothèse des Marchés Efficaces (Efficient Market Hypothesis)**, les prix reflètent toute l'information disponible.
 
 #### Typologie des Actifs :
-* **Actions (Stocks)** : Titres de propriété. Le Payoff est un flux de **Dividendes** et une valeur résiduelle.
+* **Actions (Stocks)** : Titres de propriété. 
 * **Obligations (Bonds)** : Titres de créance. Définis par :
     * **Nominal ($N$)** : Capital emprunté.
     * **Coupons ($C$)** : Paiements périodiques.
@@ -40,13 +41,12 @@ La conversion entre valeur future et valeur présente utilise les taux d'intér�
 * **Taux Composé et Capitalisation** : La Valeur Future ($F_V$) d'un capital initial $I_C$ après $T$ périodes est :
     $$F_{V} = I_{C} \prod_{k=0}^{T-1}(1+r_{k})$$
     Pour un taux $r$ constant, $F_V = I_C(1+r)^T$.
-* **Actualisation (Discounting)** : La Valeur Actuelle ($V$) d'un flux $F$ à l'instant $t$ est :
+* **Actualisation (Discounting)** : La Valeur actualisée ($V$) d'un flux $F$ à l'instant $t$ est :
     $$V=\frac{F}{\prod_{k=t}^{t^{\prime}-1}(1+r_{k})}$$
     Le facteur d'actualisation est $D(t, t') = \prod_{k=t}^{t^{\prime}-1}(1+r_{k})^{-1}$.
-* **Taux Annuel Effectif ($r_e$)** : Pour un taux $r_a$ capitalisé $k$ fois par an :
-    $$r_{e} = \left(1+\frac{r_a}{k}\right)^k - 1$$
 
-### Chapitre 3 : Évaluation Déterministe et Non-Arbitrage
+
+### Chapitre 3 : Arbitrage
 
 Le principe fondateur de l'évaluation est l'**Absence d'Opportunité d'Arbitrage (AAO)**.
 
@@ -60,14 +60,10 @@ Le principe fondateur de l'évaluation est l'**Absence d'Opportunité d'Arbitrag
 
 ### Chapitre 4 : Le "Toy Model" (Modèle Binomial à une période)
 
+On considère un marché avec un bon sans risque $S^0_t = (1+r)^t$ et un actif risqué $S_t$ évoluant sur un seul pas de temps.
 
-
-#### Proposition 4.3.3 : Condition d'Absence d'Opportunité d'Arbitrage (AAO)
-
-**Énoncé :** Il n'existe pas d'Opportunité d'Arbitrage (AO) sur le marché $(S^0, S)$ si et seulement si :
-$$d < 1+r < u$$ 
-
----
+* **Condition d'AAO** : L'AAO est nécessaire et suffisante si et seulement si :
+    $$d < 1+r < u$$
 
 #### Preuve
 ##### 1. Condition Nécessaire
@@ -101,6 +97,13 @@ La condition $d < 1+r < u$ signifie que l'actif risqué $S$ est effectivement pl
 
 **$u > 1+r$** : La valeur haute de l'actif risqué dépasse celle du bon, ce qui justifie la prise de risque pour l'investisseur.
 ***$d < 1+r$** : L'actif risqué peut prendre des valeurs inférieures à l'actif sans risque, ce qui définit la notion de risque (perte potentielle par rapport au placement sûr).
+
+
+* **Mesure Martingale Équivalente (EMM) $\mathbb{P}^*$** : L'existence d'une EMM est équivalente à l'AAO (1er Théorème Fondamental). $\mathbb{P}^*$ est une mesure sous laquelle les prix actualisés $\tilde{S}_t = S_t / S^0_t$ sont une martingale.
+* **Probabilité Neutre au Risque ($p^*$)** : Dans ce modèle complet (l'EMM est unique), $p^*$ est donnée par :
+    $$p^{*} = \mathbb{P}^*[S_1=S_0 u] = \frac{(1+r)-d}{u-d}$$
+* **Prix d'Arbitrage** : Le prix $\overline{x}$ d'un payoff $h$ à l'instant $T=1$ est son espérance actualisée sous $\mathbb{P}^*$ :
+    $$\overline{x} = \frac{1}{1+r} \mathbb{E}^{\mathbb{P}^{*}}[h] = \frac{1}{1+r} \left( p^* h(S_0 u) + (1-p^*) h(S_0 d) \right)$$
 
 
 #### Preuve du capital initial du portefeuille réplicant

@@ -1489,25 +1489,23 @@ border-radius: 0px;
 <div id="chapitre-1-vocabulaire-et-fonctions" class="section level3" number="1">
 <h3><span class="header-section-number">1</span> Chapitre 1 :
 Vocabulaire et Fonctions</h3>
-<p>Les marchés financiers assurent trois rôles primordiaux : 1.
-<strong>Allocation intertemporelle de Liquidités (Cash Flows)</strong> :
-Transfert de pouvoir d’achat du présent vers le futur (épargne) et
-inversement (emprunt).</p>
-<ol start="2" style="list-style-type: decimal">
-<li><strong>Allocation et Réallocation des Risques</strong> :
-Distribution optimale de l’incertitude entre les agents.</li>
-<li><strong>Efficience et Information</strong> : Les prix servent de
+<p>Les marchés financiers assurent trois rôles primordiaux :</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Allocation intertemporelle de Liquidités (Cash
+Flows)</strong> : Transfert de pouvoir d’achat du présent vers le futur
+(épargne) et inversement (emprunt).</p></li>
+<li><p><strong>Allocation et Réallocation des Risques</strong> :
+Distribution optimale de l’incertitude entre les agents.</p></li>
+<li><p><strong>Efficience et Information</strong> : Les prix servent de
 signaux. Sous l’<strong>Hypothèse des Marchés Efficaces (Efficient
 Market Hypothesis)</strong>, les prix reflètent toute l’information
-disponible.</li>
+disponible.</p></li>
 </ol>
 <div id="typologie-des-actifs" class="section level4" number="1.1">
 <h4><span class="header-section-number">1.1</span> Typologie des Actifs
 :</h4>
 <ul>
-<li><strong>Actions (Stocks)</strong> : Titres de propriété. Le Payoff
-est un flux de <strong>Dividendes</strong> et une valeur
-résiduelle.</li>
+<li><strong>Actions (Stocks)</strong> : Titres de propriété.</li>
 <li><strong>Obligations (Bonds)</strong> : Titres de créance. Définis
 par :
 <ul>
@@ -1541,17 +1539,15 @@ d’intérêt :</p>
 <li><strong>Taux Composé et Capitalisation</strong> : La Valeur Future
 (<span class="math inline">\(F_V\)</span>) d’un capital initial <span class="math inline">\(I_C\)</span> après <span class="math inline">\(T\)</span> périodes est : <span class="math display">\[F_{V} = I_{C} \prod_{k=0}^{T-1}(1+r_{k})\]</span>
 Pour un taux <span class="math inline">\(r\)</span> constant, <span class="math inline">\(F_V = I_C(1+r)^T\)</span>.</li>
-<li><strong>Actualisation (Discounting)</strong> : La Valeur Actuelle
+<li><strong>Actualisation (Discounting)</strong> : La Valeur actualisée
 (<span class="math inline">\(V\)</span>) d’un flux <span class="math inline">\(F\)</span> à l’instant <span class="math inline">\(t\)</span> est : <span class="math display">\[V=\frac{F}{\prod_{k=t}^{t^{\prime}-1}(1+r_{k})}\]</span>
 Le facteur d’actualisation est <span class="math inline">\(D(t, t&#39;)
 = \prod_{k=t}^{t^{\prime}-1}(1+r_{k})^{-1}\)</span>.</li>
-<li><strong>Taux Annuel Effectif (<span class="math inline">\(r_e\)</span>)</strong> : Pour un taux <span class="math inline">\(r_a\)</span> capitalisé <span class="math inline">\(k\)</span> fois par an : <span class="math display">\[r_{e} = \left(1+\frac{r_a}{k}\right)^k -
-1\]</span></li>
 </ul>
 </div>
-<div id="chapitre-3-évaluation-déterministe-et-non-arbitrage" class="section level3" number="3">
-<h3><span class="header-section-number">3</span> Chapitre 3 : Évaluation
-Déterministe et Non-Arbitrage</h3>
+<div id="chapitre-3-arbitrage" class="section level3" number="3">
+<h3><span class="header-section-number">3</span> Chapitre 3 :
+Arbitrage</h3>
 <p>Le principe fondateur de l’évaluation est l’<strong>Absence
 d’Opportunité d’Arbitrage (AAO)</strong>.</p>
 <ul>
@@ -1574,19 +1570,17 @@ de maturité <span class="math inline">\(i\)</span>.</li>
 <div id="chapitre-4-le-toy-model-modèle-binomial-à-une-période" class="section level3" number="4">
 <h3><span class="header-section-number">4</span> Chapitre 4 : Le “Toy
 Model” (Modèle Binomial à une période)</h3>
-<div id="proposition-4.3.3-condition-dabsence-dopportunité-darbitrage-aao" class="section level4" number="4.1">
-<h4><span class="header-section-number">4.1</span> Proposition 4.3.3 :
-Condition d’Absence d’Opportunité d’Arbitrage (AAO)</h4>
-<p><strong>Énoncé :</strong> Il n’existe pas d’Opportunité d’Arbitrage
-(AO) sur le marché <span class="math inline">\((S^0, S)\)</span> si et
-seulement si : <span class="math display">\[d &lt; 1+r &lt;
-u\]</span></p>
-<hr />
-</div>
-<div id="preuve" class="section level4" number="4.2">
-<h4><span class="header-section-number">4.2</span> Preuve</h4>
-<div id="condition-nécessaire" class="section level5" number="4.2.1">
-<h5><span class="header-section-number">4.2.1</span> 1. Condition
+<p>On considère un marché avec un bon sans risque <span class="math inline">\(S^0_t = (1+r)^t\)</span> et un actif risqué <span class="math inline">\(S_t\)</span> évoluant sur un seul pas de
+temps.</p>
+<ul>
+<li><strong>Condition d’AAO</strong> : L’AAO est nécessaire et
+suffisante si et seulement si : <span class="math display">\[d &lt; 1+r
+&lt; u\]</span></li>
+</ul>
+<div id="preuve" class="section level4" number="4.1">
+<h4><span class="header-section-number">4.1</span> Preuve</h4>
+<div id="condition-nécessaire" class="section level5" number="4.1.1">
+<h5><span class="header-section-number">4.1.1</span> 1. Condition
 Nécessaire</h5>
 <p>Supposons que la relation <span class="math inline">\(d &lt; 1+r &lt;
 u\)</span> ne soit pas satisfaite. Cela signifie que soit <span class="math inline">\(d \ge 1+r\)</span>, soit <span class="math inline">\(1+r \ge u\)</span>. <br></p>
@@ -1608,8 +1602,8 @@ rendement du bon sans risque. Considérons la stratégie <span class="math inlin
 est une AO (Opportunité d’Arbitrage).</p></li>
 </ul>
 </div>
-<div id="condition-suffisante" class="section level5" number="4.2.2">
-<h5><span class="header-section-number">4.2.2</span> 2. Condition
+<div id="condition-suffisante" class="section level5" number="4.1.2">
+<h5><span class="header-section-number">4.1.2</span> 2. Condition
 Suffisante</h5>
 <p>Supposons que <span class="math inline">\(d &lt; 1+r &lt; u\)</span>
 soit vérifiée et qu’il existe une AO <span class="math inline">\((0,
@@ -1624,8 +1618,8 @@ conséquent, la seule possibilité est <span class="math inline">\(\pi =
 <hr />
 </div>
 </div>
-<div id="interprétation-intuitive-de-la-condition-4.3.1" class="section level4" number="4.3">
-<h4><span class="header-section-number">4.3</span> Interprétation
+<div id="interprétation-intuitive-de-la-condition-4.3.1" class="section level4" number="4.2">
+<h4><span class="header-section-number">4.2</span> Interprétation
 Intuitive de la Condition (4.3.1)</h4>
 <p>La condition <span class="math inline">\(d &lt; 1+r &lt; u\)</span>
 signifie que l’actif risqué <span class="math inline">\(S\)</span> est
@@ -1636,9 +1630,23 @@ valeur haute de l’actif risqué dépasse celle du bon, ce qui justifie la
 prise de risque pour l’investisseur. *<strong><span class="math inline">\(d &lt; 1+r\)</span></strong> : L’actif risqué peut
 prendre des valeurs inférieures à l’actif sans risque, ce qui définit la
 notion de risque (perte potentielle par rapport au placement sûr).</p>
+<ul>
+<li><strong>Mesure Martingale Équivalente (EMM) <span class="math inline">\(\mathbb{P}^*\)</span></strong> : L’existence d’une
+EMM est équivalente à l’AAO (1er Théorème Fondamental). <span class="math inline">\(\mathbb{P}^*\)</span> est une mesure sous laquelle
+les prix actualisés <span class="math inline">\(\tilde{S}_t = S_t /
+S^0_t\)</span> sont une martingale.</li>
+<li><strong>Probabilité Neutre au Risque (<span class="math inline">\(p^*\)</span>)</strong> : Dans ce modèle complet
+(l’EMM est unique), <span class="math inline">\(p^*\)</span> est donnée
+par : <span class="math display">\[p^{*} = \mathbb{P}^*[S_1=S_0 u] =
+\frac{(1+r)-d}{u-d}\]</span></li>
+<li><strong>Prix d’Arbitrage</strong> : Le prix <span class="math inline">\(\overline{x}\)</span> d’un payoff <span class="math inline">\(h\)</span> à l’instant <span class="math inline">\(T=1\)</span> est son espérance actualisée sous
+<span class="math inline">\(\mathbb{P}^*\)</span> : <span class="math display">\[\overline{x} = \frac{1}{1+r}
+\mathbb{E}^{\mathbb{P}^{*}}[h] = \frac{1}{1+r} \left( p^* h(S_0 u) +
+(1-p^*) h(S_0 d) \right)\]</span></li>
+</ul>
 </div>
-<div id="preuve-du-capital-initial-du-portefeuille-réplicant" class="section level4" number="4.4">
-<h4><span class="header-section-number">4.4</span> Preuve du capital
+<div id="preuve-du-capital-initial-du-portefeuille-réplicant" class="section level4" number="4.3">
+<h4><span class="header-section-number">4.3</span> Preuve du capital
 initial du portefeuille réplicant</h4>
 <p>Pour répliquer un payoff <span class="math inline">\(h\)</span>, on
 cherche <span class="math inline">\((x, \pi)\)</span> tel que <span class="math inline">\(X_1 = h\)</span> dans tous les états du monde : 1.
