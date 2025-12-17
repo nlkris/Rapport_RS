@@ -1,0 +1,83 @@
+---
+title: "Rapport_RS_Finance_WIP"
+author: "nguye"
+date: "2025-12-16"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+### Chapitre 4 : Le "Toy Model" (Modèle Binomial à une période)
+
+#### Preuve de la condition d'Absence d'Opportunité d'Arbitrage (AAO)
+**Assertion :** Le marché est viable (sans AO) si et seulement si $d < 1+r < u$.
+
+1. **Condition Nécessaire (Preuve par l'absurde) :**
+   - Supposons $1+r \geq u$. Alors $1+r > d$ également. En vendant à découvert l'actif risqué ($\pi = -1$) et en plaçant le gain au taux sans risque, la richesse terminale $X_1$ pour un capital initial $x=0$ est :
+     $$X_1 = S_0(1+r - C)$$
+     Puisque $C$ vaut $u$ ou $d$, et que $1+r \geq u > d$, alors $X_1 \geq 0$ presque sûrement et $\mathbb{P}(X_1 > 0) > 0$. C'est une AO.
+   - Le raisonnement est symétrique si $1+r \leq d$ (en achetant l'actif).
+2. **Condition Suffisante :**
+   - Si $d < 1+r < u$, alors pour toute stratégie $\pi \neq 0$, la variable aléatoire $(C - (1+r))$ peut être soit strictement positive (si $C=u$), soit strictement négative (si $C=d$). 
+   - Par conséquent, la richesse $X_1 = \pi S_0 (C - (1+r))$ ne peut pas être $\geq 0$ presque sûrement sans être nulle. Il n'y a pas d'AO.
+
+#### Preuve du capital initial du portefeuille réplicant
+Pour répliquer un payoff $h$, on cherche $(x, \pi)$ tel que $X_1 = h$ dans tous les états du monde :
+1. $\pi S_0 u + (x - \pi S_0)(1+r) = h^+$ (cas hausse)
+2. $\pi S_0 d + (x - \pi S_0)(1+r) = h^-$ (cas baisse)
+
+En soustrayant (2) de (1) : $\pi S_0 (u-d) = h^+ - h^- \implies \pi = \frac{h^+ - h^-}{S_0(u-d)}$.
+En isolant $x$ dans l'équation (1) :
+$$x = \frac{1}{1+r} \left[ h^+ \left( \frac{1+r-d}{u-d} \right) + h^- \left( \frac{u-(1+r)}{u-d} \right) \right]$$
+En posant $p^* = \frac{1+r-d}{u-d}$, on obtient : **$x = \frac{1}{1+r} \mathbb{E}^{\mathbb{P}^*}[h]$**.
+
+---
+
+### Chapitre 5 : Marchés à temps discret (T périodes)
+
+#### Preuve : Existence d'une EMM $\implies$ AAO
+**Assertion :** S'il existe une mesure de martingale équivalente $\mathbb{Q}$, alors le marché satisfait la condition d'AAO.
+
+1. Soit $(X_t)_{t \in \{0,...,T\}}$ le processus de richesse actualisée d'une stratégie d'arbitrage potentielle avec un capital initial $x=0$.
+2. Par définition d'une stratégie de portefeuille, $\tilde{X}_t$ est une **$\mathbb{Q}$-martingale** car :
+   $$\mathbb{E}^{\mathbb{Q}}[\tilde{X}_t | \mathcal{F}_{t-1}] = \tilde{X}_{t-1} + \pi_t \mathbb{E}^{\mathbb{Q}}[\tilde{S}_t - \tilde{S}_{t-1} | \mathcal{F}_{t-1}] = \tilde{X}_{t-1} + 0$$
+3. Par la propriété de martingale, $\mathbb{E}^{\mathbb{Q}}[\tilde{X}_T] = \tilde{X}_0 = 0$.
+4. Si c'était une AO, on aurait $X_T \geq 0$ p.s. et $\mathbb{P}(X_T > 0) > 0$. Par équivalence des mesures, on aurait aussi $\mathbb{Q}(X_T > 0) > 0$.
+5. Cela impliquerait $\mathbb{E}^{\mathbb{Q}}[\tilde{X}_T] > 0$, ce qui contredit le point (3). L'AO ne peut donc pas exister.
+
+#### Preuve de l'Unicité du Prix (Lien avec l'Espérance)
+Le prix d'un actif réplicable $V_t$ à l'instant $t$ est donné par :
+$$\tilde{V}_t = \mathbb{E}^{\mathbb{Q}}[\tilde{V}_T | \mathcal{F}_t] \implies V_t = \frac{1}{(1+r)^{T-t}} \mathbb{E}^{\mathbb{Q}}[V_T | \mathcal{F}_t]$$
+*Preuve :* Tout portefeuille répliquant $V_T$ a une valeur actualisée qui est une $\mathbb{Q}$-martingale. Puisque $X_T = V_T$, alors $\tilde{X}_t = \mathbb{E}^{\mathbb{Q}}[\tilde{V}_T | \mathcal{F}_t]$. Par absence d'arbitrage, le prix de l'actif doit être égal à la valeur du portefeuille réplicant, soit $V_t = X_t$.
+
+#### Preuve 5.4.5 (Théorème Fondamental - Étape d'existence)
+*Note : Cette preuve repose sur la séparation des ensembles convexes (Théorème de Hahn-Banach).*
+On définit $K$ comme l'ensemble des richesses terminales actualisées de capital initial nul : $K = \{ (\pi \cdot \tilde{S})_T, \pi \in \mathcal{P} \}$.
+L'absence d'arbitrage signifie que $K \cap L^0_+(\Omega, \mathcal{F}, \mathbb{P}) = \{0\}$.
+Par le théorème de séparation, il existe une forme linéaire strictement positive (qui définit la densité de la mesure $\mathbb{Q}$) qui sépare l'ensemble des stratégies possibles de l'ensemble des arbitrages, prouvant ainsi l'existence de la mesure $\mathbb{Q}$.
