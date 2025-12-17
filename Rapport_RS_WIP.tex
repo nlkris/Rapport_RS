@@ -1,0 +1,427 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Preuves du Premier Théorème Fondamental et du Modèle Binomial},
+  pdfauthor={Romain},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Preuves du Premier Théorème Fondamental et du Modèle Binomial}
+\author{Romain}
+\date{17 décembre 2025}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\subsubsection{Chapitre 1 : Vocabulaire et
+Fonctions}\label{chapitre-1-vocabulaire-et-fonctions}
+
+Les marchés financiers assurent trois rôles primordiaux :
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Allocation intertemporelle de Liquidités (Cash Flows)} :
+  Transfert de pouvoir d'achat du présent vers le futur (épargne) et
+  inversement (emprunt).
+\item
+  \textbf{Allocation et Réallocation des Risques} : Distribution
+  optimale de l'incertitude entre les agents.
+\item
+  \textbf{Efficience et Information} : Les prix servent de signaux. Sous
+  l'\textbf{Hypothèse des Marchés Efficaces (Efficient Market
+  Hypothesis)}, les prix reflètent toute l'information disponible.
+\end{enumerate}
+
+\paragraph{Typologie des Actifs :}\label{typologie-des-actifs}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Actions (Stocks)} : Titres de propriété.
+\item
+  \textbf{Obligations (Bonds)} : Titres de créance. Définis par :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Nominal (\(N\))} : Capital emprunté.
+  \item
+    \textbf{Coupons (\(C\))} : Paiements périodiques.
+  \item
+    \textbf{Maturité (\(T\))} : Date de remboursement du nominal.
+  \end{itemize}
+\item
+  \textbf{Options} : Droit (non obligation) d'acheter (\textbf{Call}) ou
+  de vendre (\textbf{Put}) un \textbf{Sous-jacent (\(S\))} à un prix
+  \textbf{Strike (\(K\))} à l'échéance \(T\).
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Payoff du Call Européen :
+    \(h_C(S_T) = \max\{S_T - K, 0\} = (S_T - K)_+\).
+  \item
+    Payoff du Put Européen :
+    \(h_P(S_T) = \max\{K - S_T, 0\} = (K - S_T)_+\).
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Chapitre 2 : Taux d'Intérêt et
+Actualisation}\label{chapitre-2-taux-dintuxe9ruxeat-et-actualisation}
+
+La conversion entre valeur future et valeur présente utilise les taux
+d'intérêt :
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Taux Composé et Capitalisation} : La Valeur Future (\(F_V\))
+  d'un capital initial \(I_C\) après \(T\) périodes est :
+  \[F_{V} = I_{C} \prod_{k=0}^{T-1}(1+r_{k})\] Pour un taux \(r\)
+  constant, \(F_V = I_C(1+r)^T\).
+\item
+  \textbf{Actualisation (Discounting)} : La Valeur actualisée (\(V\))
+  d'un flux \(F\) à l'instant \(t\) est :
+  \[V=\frac{F}{\prod_{k=t}^{t^{\prime}-1}(1+r_{k})}\] Le facteur
+  d'actualisation est
+  \(D(t, t') = \prod_{k=t}^{t^{\prime}-1}(1+r_{k})^{-1}\).
+\end{itemize}
+
+\subsubsection{Chapitre 3 : Arbitrage}\label{chapitre-3-arbitrage}
+
+Le principe fondateur de l'évaluation est l'\textbf{Absence
+d'Opportunité d'Arbitrage (AAO)}.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Définition d'une AO} : Une stratégie d'investissement
+  \((X_0, \pi)\) est une AO si :
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    Capital initial nul : \(X_0=0\).
+  \item
+    Gain non négatif certain : \(\mathbb{P}[X_T \ge 0] = 1\).
+  \item
+    Gain positif possible : \(\mathbb{P}[X_T > 0] > 0\).
+  \end{enumerate}
+\item
+  \textbf{Prix d'Arbitrage} : Sous l'AAO, le prix \(p_A\) d'un contrat
+  donnant des flux certains \(F_i\) est le coût de réplication :
+  \[p_{A}:=\sum_{i=1}^{T}F_{i}\times C_{i}\] où \(C_i\) est le prix du
+  Zéro-Coupon de maturité \(i\).
+\end{itemize}
+
+\subsubsection{Chapitre 4 : Le ``Toy Model'' (Modèle Binomial à une
+période)}\label{chapitre-4-le-toy-model-moduxe8le-binomial-uxe0-une-puxe9riode}
+
+On considère un marché avec un bon sans risque \(S^0_t = (1+r)^t\) et un
+actif risqué \(S_t\) évoluant sur un seul pas de temps.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Condition d'AAO} : Une opportunité d'arbitrage est présente si
+  et seulement si : \[d < 1+r < u\]
+\end{itemize}
+
+\paragraph{Preuve}\label{preuve}
+
+\subparagraph{1. Condition Nécessaire}\label{condition-nuxe9cessaire}
+
+Supposons que la relation \(d < 1+r < u\) ne soit pas satisfaite. Cela
+signifie que soit \(d \ge 1+r\), soit \(1+r \ge u\).
+
+\textbf{Cas \(1+r \ge u\)} : La valeur maximale de l'actif risqué est
+inférieure ou égale au rendement du bon sans risque. Considérons la
+stratégie \(x=0\) et \(\pi=-1\) (vente à découvert).
+
+\begin{itemize}
+\item
+  La richesse terminale est :
+  \(X_1^{(0,\pi)} = S_0(1+r-C) \ge S_0(1+r-u) \ge 0\).\\
+\item
+  Si \(1+r > u\), alors
+  \(\mathbb{P}[X_1^{(0,\pi)} > 0] = \mathbb{P}[1+r-C > 0] \ge \mathbb{P}[C=u] = p > 0\).\\
+\item
+  Si \(1+r = u\), alors
+  \(\mathbb{P}[X_1^{(0,\pi)} > 0] = \mathbb{P}[1+r-C > 0] \ge \mathbb{P}[C=d] = 1-p > 0\).\\
+\item
+  Dans les deux cas, \((0, \pi)\) est une AO (Opportunité d'Arbitrage).
+\end{itemize}
+
+\subparagraph{2. Condition Suffisante}\label{condition-suffisante}
+
+Supposons que \(d < 1+r < u\) soit vérifiée et qu'il existe une AO
+\((0, \pi)\).La richesse est donnée par
+\(X_1^{(x,\pi)} = S_0\pi(C-(1+r))\).
+
+\emph{Si \(\pi > 0\) : Puisque \(\mathbb{P}[X_1^{(x,\pi)} \ge 0] = 1\),
+il faudrait que \(\mathbb{P}[C-(1+r) \ge 0] = 1\), ce qui contredit
+\(1+r < u\). }Si \(\pi < 0\) : Un argument similaire montre que cela
+contredit \(d < 1+r\). *Par conséquent, la seule possibilité est
+\(\pi = 0\). Or, le portefeuille \((0,0)\) n'est pas une AO.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\paragraph{Interprétation Intuitive de la Condition
+(4.3.1)}\label{interpruxe9tation-intuitive-de-la-condition-4.3.1}
+
+La condition \(d < 1+r < u\) signifie que l'actif risqué \(S\) est
+effectivement plus risqué que l'actif sans risque \(S^0\), tout en
+offrant un rendement potentiel plus élevé:
+
+\textbf{\(u > 1+r\)} : La valeur haute de l'actif risqué dépasse celle
+du bon, ce qui justifie la prise de risque pour l'investisseur.
+*\textbf{\(d < 1+r\)} : L'actif risqué peut prendre des valeurs
+inférieures à l'actif sans risque, ce qui définit la notion de risque
+(perte potentielle par rapport au placement sûr).
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Mesure Martingale Équivalente (EMM) \(\mathbb{P}^*\)} :
+  L'existence d'une EMM est équivalente à l'AAO (1er Théorème
+  Fondamental). \(\mathbb{P}^*\) est une mesure sous laquelle les prix
+  actualisés \(\tilde{S}_t = S_t / S^0_t\) sont une martingale.
+\item
+  \textbf{Probabilité Neutre au Risque (\(p^*\))} : Dans ce modèle
+  complet (l'EMM est unique), \(p^*\) est donnée par :
+  \[p^{*} = \mathbb{P}^*[S_1=S_0 u] = \frac{(1+r)-d}{u-d}\]
+\item
+  \textbf{Prix d'Arbitrage} : Le prix \(\overline{x}\) d'un payoff \(h\)
+  à l'instant \(T=1\) est son espérance actualisée sous \(\mathbb{P}^*\)
+  :
+  \[\overline{x} = \frac{1}{1+r} \mathbb{E}^{\mathbb{P}^{*}}[h] = \frac{1}{1+r} \left( p^* h(S_0 u) + (1-p^*) h(S_0 d) \right)\]
+\end{itemize}
+
+\paragraph{Preuve du capital initial du portefeuille
+réplicant}\label{preuve-du-capital-initial-du-portefeuille-ruxe9plicant}
+
+Pour répliquer un payoff \(h\), on cherche \((x, \pi)\) tel que
+\(X_1 = h\) dans tous les états du monde : 1.
+\(\pi S_0 u + (x - \pi S_0)(1+r) = h^+\) (cas hausse) 2.
+\(\pi S_0 d + (x - \pi S_0)(1+r) = h^-\) (cas baisse)
+
+En soustrayant (2) de (1) :
+\(\pi S_0 (u-d) = h^+ - h^- \implies \pi = \frac{h^+ - h^-}{S_0(u-d)}\).
+En isolant \(x\) dans l'équation (1) :
+\[x = \frac{1}{1+r} \left[ h^+ \left( \frac{1+r-d}{u-d} \right) + h^- \left( \frac{u-(1+r)}{u-d} \right) \right]\]
+En posant \(p^* = \frac{1+r-d}{u-d}\), on obtient :
+\(x = \frac{1}{1+r} \mathbb{E}^{\mathbb{P}^*}[h]\).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{Chapitre 5 : Marchés à temps discret (T
+périodes)}\label{chapitre-5-marchuxe9s-uxe0-temps-discret-t-puxe9riodes}
+
+\section{Chapitre 4 : Le ``Toy Model'' (Modèle
+Binomial)}\label{chapitre-4-le-toy-model-moduxe8le-binomial}
+
+\subsection{Proposition 4.3.3 : Condition d'Absence d'Arbitrage
+(AAO)}\label{proposition-4.3.3-condition-dabsence-darbitrage-aao}
+
+\textbf{Énoncé :} Il n'existe pas d'Opportunité d'Arbitrage (AO) sur le
+marché si et seulement si : \[d < 1+r < u\]
+
+\subsubsection{1. Condition Nécessaire}\label{condition-nuxe9cessaire-1}
+
+Supposons que la relation \(d < 1+r < u\) ne soit pas satisfaite. Cela
+signifie que soit \(d \ge 1+r\), soit \(1+r \ge u\).
+
+\textbf{Cas \(1+r \ge u\)} : La valeur maximale de l'actif risqué est
+inférieure ou égale au rendement du bon sans risque. On choisit \(x=0\)
+et \(\pi=-1\) (vente à découvert).
+
+\begin{itemize}
+\item
+  La richesse terminale est :
+  \(X_1^{(0,\pi)} = S_0(1+r-C) \ge S_0(1+r-u) \ge 0\).\\
+\item
+  Si \(1+r > u\), alors
+  \(\mathbb{P}[X_1^{(0,\pi)} > 0] = \mathbb{P}[1+r-C > 0] \ge \mathbb{P}[C=u] = p > 0\).\\
+\item
+  Si \(1+r = u\), alors
+  \(\mathbb{P}[X_1^{(0,\pi)} > 0] = \mathbb{P}[1+r-C > 0] \ge \mathbb{P}[C=d] = 1-p > 0\).\\
+\end{itemize}
+
+\textbf{Cas \(1+r \le d\)} : Le rendement sans risque est inférieur au
+pire scénario de l'actif risqué. On choisit \(x=0\) et \(\pi=1\).
+
+\begin{itemize}
+\tightlist
+\item
+  Si \(1+r < d\), alors
+  \(\mathbb{P}[X_1^{(0,1)} > 0] = \mathbb{P}[C-(1+r) > 0] \ge \mathbb{P}[C=d] = 1-p > 0\).\\
+\item
+  Si \(1+r = d\), alors
+  \(\mathbb{P}[X_1^{(0,1)} > 0] = \mathbb{P}[C-(1+r) > 0] \ge \mathbb{P}[C=u] = p > 0\).\\
+\end{itemize}
+
+Dans tous ces cas, il existe une AO. L'AAO impose donc \(d < 1+r < u\).
+
+\subsubsection{2. Condition Suffisante}\label{condition-suffisante-1}
+
+Si \(d < 1+r < u\), alors pour toute stratégie \(\pi \ne 0\), l'aléa
+\((C - (1+r))\) peut être soit strictement positif (si \(C=u\)), soit
+strictement négatif (si \(C=d\)). La richesse ne peut donc pas être
+positive presque sûrement sans être nulle.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Preuve du capital initial du portefeuille
+réplicant}\label{preuve-du-capital-initial-du-portefeuille-ruxe9plicant-1}
+
+Pour répliquer un payoff \(h\), on cherche \((x, \pi)\) tel que : 1.
+\(\pi S_0 u + (x - \pi S_0)(1+r) = h^+\)\\
+2. \(\pi S_0 d + (x - \pi S_0)(1+r) = h^-\)
+
+En isolant \(x\) dans le système, on obtient :
+\[x = \frac{1}{1+r} \left[ h^+ \left( \frac{1+r-d}{u-d} \right) + h^- \left( \frac{u-(1+r)}{u-d} \right) \right]\]
+
+En posant \(p^* = \frac{1+r-d}{u-d}\), on retrouve la formule
+risque-neutre :
+\textbf{\(x = \frac{1}{1+r} \mathbb{E}^{\mathbb{P}^*}[h]\)}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Chapitre 5 : Théorème 5.4.5 (1er Théorème
+Fondamental)}\label{chapitre-5-thuxe9oruxe8me-5.4.5-1er-thuxe9oruxe8me-fondamental}
+
+\section{Théorème 5.4.5 : Premier Théorème Fondamental de l'Évaluation
+d'Actifs}\label{thuxe9oruxe8me-5.4.5-premier-thuxe9oruxe8me-fondamental-de-luxe9valuation-dactifs}
+
+\textbf{Énoncé :} Un marché est sans opportunité d'arbitrage (AAO) si et
+seulement s'il existe une mesure de probabilité martingale équivalente
+(EMM).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Preuve du Théorème}\label{preuve-du-thuxe9oruxe8me}
+
+\subsubsection{\texorpdfstring{1. Sens Suffisant : Existence d'une EMM
+\(\implies\) Absence
+d'Arbitrage}{1. Sens Suffisant : Existence d'une EMM \textbackslash implies Absence d'Arbitrage}}\label{sens-suffisant-existence-dune-emm-implies-absence-darbitrage}
+
+On suppose qu'il existe une mesure \(\tilde{\mathbb{P}}\) sous laquelle
+les prix actualisés sont des martingales. Montrons qu'aucun arbitrage
+n'est possible par l'absurde.
+
+\textbf{Étape A : La richesse est une martingale} Pour tout portefeuille
+\((0, \pi)\) de capital initial nul, la richesse actualisée
+\(\tilde{X}\) suit la dynamique :
+\[\tilde{X}_t - \tilde{X}_{t-1} = \pi_t \cdot (\tilde{S}_t - \tilde{S}_{t-1})\]
+En prenant l'espérance conditionnelle sous \(\tilde{\mathbb{P}}\) :
+\[\mathbb{E}^{\tilde{\mathbb{P}}}[\tilde{X}_t - \tilde{X}_{t-1} \mid \mathcal{F}_{t-1}] = \pi_t \cdot \mathbb{E}^{\tilde{\mathbb{P}}}[\tilde{S}_t - \tilde{S}_{t-1} \mid \mathcal{F}_{t-1}] = 0\]
+Puisque \(\tilde{S}\) est une martingale, \(\tilde{X}\) l'est aussi.
+Ainsi,
+\(\mathbb{E}^{\tilde{\mathbb{P}}}[\tilde{X}_T] = \tilde{X}_0 = 0\).
+
+\textbf{Étape B : Contradiction avec l'arbitrage} Si \((0, \pi)\) était
+un arbitrage, on aurait \(\tilde{X}_T \geq 0\) presque sûrement et
+\(\mathbb{P}(\tilde{X}_T > 0) > 0\). Par équivalence des mesures, cela
+impliquerait \(\mathbb{E}^{\tilde{\mathbb{P}}}[\tilde{X}_T] > 0\).\\
+Ceci contredit \(\mathbb{E}^{\tilde{\mathbb{P}}}[\tilde{X}_T] = 0\).
+\textbf{L'arbitrage est donc impossible.}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{\texorpdfstring{2. Sens Nécessaire : Absence d'Arbitrage
+\(\implies\) Existence d'une
+EMM}{2. Sens Nécessaire : Absence d'Arbitrage \textbackslash implies Existence d'une EMM}}\label{sens-nuxe9cessaire-absence-darbitrage-implies-existence-dune-emm}
+
+Cette partie utilise un argument géométrique (théorème de séparation des
+convexes).
+
+\textbf{Étape 1 : Définition des ensembles} Considérons deux ensembles
+dans l'espace des variables aléatoires : * \(\mathcal{W}\) : l'ensemble
+de toutes les richesses terminales \(\tilde{X}_T\) atteignables avec un
+capital nul. * \(\mathcal{P}\) : l'ensemble des variables aléatoires
+strictement positives d'espérance 1 (les densités de probabilité).
+
+\textbf{Étape 2 : Séparation par AAO} L'hypothèse d'absence d'arbitrage
+garantit que \(\mathcal{W}\) ne contient aucun élément positif non nul.
+Ainsi, \(\mathcal{W} \cap \mathcal{P} = \emptyset\).\\
+D'après le théorème de séparation, il existe une variable \(\tilde{Z}\)
+qui ``sépare'' ces deux ensembles, telle que : 1.
+\(\mathbb{E}[\tilde{Z} \cdot W] = 0\) pour tout \(W \in \mathcal{W}\)
+(le gain moyen est nul). 2. \(\mathbb{E}[\tilde{Z}] > 0\).
+
+\textbf{Étape 3 : Conclusion} En définissant la nouvelle probabilité
+\(\tilde{\mathbb{P}}\) par la densité
+\(d\tilde{\mathbb{P}}/d\mathbb{P} = \tilde{Z}/\mathbb{E}[\tilde{Z}]\),
+la condition (1) implique que pour toute stratégie, l'espérance du gain
+est nulle.\\
+En testant cette condition sur une stratégie simple (acheter l'actif à
+\(t-1\) et le vendre à \(t\)), on obtient :
+\[\mathbb{E}^{\tilde{\mathbb{P}}}[\tilde{S}_t - \tilde{S}_{t-1} \mid \mathcal{F}_{t-1}] = 0\]
+\textbf{Le processus des prix est donc une martingale sous
+\(\tilde{\mathbb{P}}\).}
+
+\end{document}
