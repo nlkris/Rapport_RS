@@ -3,8 +3,6 @@ title: "Rapport_RS_Finance_WIP"
 author: "nguye"
 date: "2025-12-16"
 output:
-  pdf_document:
-    toc: true
   html_document:
     toc: true
     toc_float: true
@@ -82,6 +80,13 @@ Supposons que la relation $d < 1+r < u$ ne soit pas satisfaite. Cela signifie qu
 * Si $1+r = u$, alors $\mathbb{P}[X_1^{(0,\pi)} > 0] = \mathbb{P}[1+r-C > 0] \ge \mathbb{P}[C=d] = 1-p > 0$.  
 <br>
 
+**Cas $1+r \le d$** : Le rendement sans risque est inférieur au pire scénario de l'actif risqué. On choisit $x=0$ et $\pi=1$.
+<br>
+
+* Si $1+r < d$, alors $\mathbb{P}[X_1^{(0,1)} > 0] = \mathbb{P}[C-(1+r) > 0] \ge \mathbb{P}[C=d] = 1-p > 0$.  
+* Si $1+r = d$, alors $\mathbb{P}[X_1^{(0,1)} > 0] = \mathbb{P}[C-(1+r) > 0] \ge \mathbb{P}[C=u] = p > 0$.  
+<br>
+
 * Dans les deux cas, $(0, \pi)$ est une AO (Opportunité d'Arbitrage).
 
 ##### 2. Condition Suffisante
@@ -125,65 +130,6 @@ $x = \frac{1}{1+r} \mathbb{E}^{\mathbb{P}^*}[h]$.
 ------------------------------------------------------------------------
 
 ### Chapitre 5 : Marchés à temps discret (T périodes)
-
----
-title: "Preuves du Premier Théorème Fondamental et du Modèle Binomial"
-author: "Romain"
-date: "17 décembre 2025"
-output: 
-  html_document:
-    toc: true
-    toc_depth: 2
-    theme: united
----
-
-# Chapitre 4 : Le "Toy Model" (Modèle Binomial)
-
-## Proposition 4.3.3 : Condition d'Absence d'Arbitrage (AAO)
-
-**Énoncé :** Il n'existe pas d'Opportunité d'Arbitrage (AO) sur le marché si et seulement si :
-$$d < 1+r < u$$
-
-### 1. Condition Nécessaire
-Supposons que la relation $d < 1+r < u$ ne soit pas satisfaite. Cela signifie que soit $d \ge 1+r$, soit $1+r \ge u$.
-<br>
-
-**Cas $1+r \ge u$** : La valeur maximale de l'actif risqué est inférieure ou égale au rendement du bon sans risque. On choisit $x=0$ et $\pi=-1$ (vente à découvert).
-<br>
-
-* La richesse terminale est : $X_1^{(0,\pi)} = S_0(1+r-C) \ge S_0(1+r-u) \ge 0$.  
-<br>
-
-* Si $1+r > u$, alors $\mathbb{P}[X_1^{(0,\pi)} > 0] = \mathbb{P}[1+r-C > 0] \ge \mathbb{P}[C=u] = p > 0$.  
-* Si $1+r = u$, alors $\mathbb{P}[X_1^{(0,\pi)} > 0] = \mathbb{P}[1+r-C > 0] \ge \mathbb{P}[C=d] = 1-p > 0$.  
-<br>
-
-**Cas $1+r \le d$** : Le rendement sans risque est inférieur au pire scénario de l'actif risqué. On choisit $x=0$ et $\pi=1$.
-<br>
-
-* Si $1+r < d$, alors $\mathbb{P}[X_1^{(0,1)} > 0] = \mathbb{P}[C-(1+r) > 0] \ge \mathbb{P}[C=d] = 1-p > 0$.  
-* Si $1+r = d$, alors $\mathbb{P}[X_1^{(0,1)} > 0] = \mathbb{P}[C-(1+r) > 0] \ge \mathbb{P}[C=u] = p > 0$.  
-<br>
-
-Dans tous ces cas, il existe une AO. L'AAO impose donc $d < 1+r < u$.
-
-### 2. Condition Suffisante
-Si $d < 1+r < u$, alors pour toute stratégie $\pi \ne 0$, l'aléa $(C - (1+r))$ peut être soit strictement positif (si $C=u$), soit strictement négatif (si $C=d$). La richesse ne peut donc pas être positive presque sûrement sans être nulle.
-
----
-
-## Preuve du capital initial du portefeuille réplicant
-
-Pour répliquer un payoff $h$, on cherche $(x, \pi)$ tel que :
-1. $\pi S_0 u + (x - \pi S_0)(1+r) = h^+$  
-2. $\pi S_0 d + (x - \pi S_0)(1+r) = h^-$
-
-En isolant $x$ dans le système, on obtient :
-$$x = \frac{1}{1+r} \left[ h^+ \left( \frac{1+r-d}{u-d} \right) + h^- \left( \frac{u-(1+r)}{u-d} \right) \right]$$
-
-En posant $p^* = \frac{1+r-d}{u-d}$, on retrouve la formule risque-neutre : **$x = \frac{1}{1+r} \mathbb{E}^{\mathbb{P}^*}[h]$**.
-
----
 
 # Chapitre 5 : Théorème 5.4.5 (1er Théorème Fondamental)
 # Théorème 5.4.5 : Premier Théorème Fondamental de l'Évaluation d'Actifs
