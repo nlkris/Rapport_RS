@@ -15,6 +15,48 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+### Chapitre 1 : Vocabulaire et Fonctions
+
+Les marchés financiers assurent trois rôles primordiaux :
+1.  **Allocation intertemporelle de Liquidités (Cash Flows)** : Transfert de pouvoir d'achat du présent vers le futur (épargne) et inversement (emprunt).
+
+2.  **Allocation et Réallocation des Risques** : Distribution optimale de l'incertitude entre les agents.
+3.  **Efficience et Information** : Les prix servent de signaux. Sous l'**Hypothèse des Marchés Efficaces (Efficient Market Hypothesis)**, les prix reflètent toute l'information disponible.
+
+#### Typologie des Actifs :
+* **Actions (Stocks)** : Titres de propriété. Le Payoff est un flux de **Dividendes** et une valeur résiduelle.
+* **Obligations (Bonds)** : Titres de créance. Définis par :
+    * **Nominal ($N$)** : Capital emprunté.
+    * **Coupons ($C$)** : Paiements périodiques.
+    * **Maturité ($T$)** : Date de remboursement du nominal.
+* **Options** : Droit (non obligation) d'acheter (**Call**) ou de vendre (**Put**) un **Sous-jacent ($S$)** à un prix **Strike ($K$)** à l'échéance $T$.
+    * Payoff du Call Européen : $h_C(S_T) = \max\{S_T - K, 0\} = (S_T - K)_+$.
+    * Payoff du Put Européen : $h_P(S_T) = \max\{K - S_T, 0\} = (K - S_T)_+$.
+
+### Chapitre 2 : Taux d'Intérêt et Actualisation
+
+La conversion entre valeur future et valeur présente utilise les taux d'intérêt :
+
+* **Taux Composé et Capitalisation** : La Valeur Future ($F_V$) d'un capital initial $I_C$ après $T$ périodes est :
+    $$F_{V} = I_{C} \prod_{k=0}^{T-1}(1+r_{k})$$
+    Pour un taux $r$ constant, $F_V = I_C(1+r)^T$.
+* **Actualisation (Discounting)** : La Valeur Actuelle ($V$) d'un flux $F$ à l'instant $t$ est :
+    $$V=\frac{F}{\prod_{k=t}^{t^{\prime}-1}(1+r_{k})}$$
+    Le facteur d'actualisation est $D(t, t') = \prod_{k=t}^{t^{\prime}-1}(1+r_{k})^{-1}$.
+* **Taux Annuel Effectif ($r_e$)** : Pour un taux $r_a$ capitalisé $k$ fois par an :
+    $$r_{e} = \left(1+\frac{r_a}{k}\right)^k - 1$$
+
+### Chapitre 3 : Évaluation Déterministe et Non-Arbitrage
+
+Le principe fondateur de l'évaluation est l'**Absence d'Opportunité d'Arbitrage (AAO)**.
+
+* **Définition d'une AO** : Une stratégie d'investissement $(X_0, \pi)$ est une AO si :
+    1.  Capital initial nul : $X_0=0$.
+    2.  Gain non négatif certain : $\mathbb{P}[X_T \ge 0] = 1$.
+    3.  Gain positif possible : $\mathbb{P}[X_T > 0] > 0$.
+* **Prix d'Arbitrage** : Sous l'AAO, le prix $p_A$ d'un contrat donnant des flux certains $F_i$ est le coût de réplication :
+    $$p_{A}:=\sum_{i=1}^{T}F_{i}\times C_{i}$$
+    où $C_i$ est le prix du Zéro-Coupon de maturité $i$.
 
 ### Chapitre 4 : Le "Toy Model" (Modèle Binomial à une période)
 

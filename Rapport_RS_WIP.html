@@ -1486,11 +1486,96 @@ border-radius: 0px;
 </div>
 
 
-<div id="chapitre-4-le-toy-model-modèle-binomial-à-une-période" class="section level3" number="1">
-<h3><span class="header-section-number">1</span> Chapitre 4 : Le “Toy
+<div id="chapitre-1-vocabulaire-et-fonctions" class="section level3" number="1">
+<h3><span class="header-section-number">1</span> Chapitre 1 :
+Vocabulaire et Fonctions</h3>
+<p>Les marchés financiers assurent trois rôles primordiaux : 1.
+<strong>Allocation intertemporelle de Liquidités (Cash Flows)</strong> :
+Transfert de pouvoir d’achat du présent vers le futur (épargne) et
+inversement (emprunt).</p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Allocation et Réallocation des Risques</strong> :
+Distribution optimale de l’incertitude entre les agents.</li>
+<li><strong>Efficience et Information</strong> : Les prix servent de
+signaux. Sous l’<strong>Hypothèse des Marchés Efficaces (Efficient
+Market Hypothesis)</strong>, les prix reflètent toute l’information
+disponible.</li>
+</ol>
+<div id="typologie-des-actifs" class="section level4" number="1.1">
+<h4><span class="header-section-number">1.1</span> Typologie des Actifs
+:</h4>
+<ul>
+<li><strong>Actions (Stocks)</strong> : Titres de propriété. Le Payoff
+est un flux de <strong>Dividendes</strong> et une valeur
+résiduelle.</li>
+<li><strong>Obligations (Bonds)</strong> : Titres de créance. Définis
+par :
+<ul>
+<li><strong>Nominal (<span class="math inline">\(N\)</span>)</strong> :
+Capital emprunté.</li>
+<li><strong>Coupons (<span class="math inline">\(C\)</span>)</strong> :
+Paiements périodiques.</li>
+<li><strong>Maturité (<span class="math inline">\(T\)</span>)</strong> :
+Date de remboursement du nominal.</li>
+</ul></li>
+<li><strong>Options</strong> : Droit (non obligation) d’acheter
+(<strong>Call</strong>) ou de vendre (<strong>Put</strong>) un
+<strong>Sous-jacent (<span class="math inline">\(S\)</span>)</strong> à
+un prix <strong>Strike (<span class="math inline">\(K\)</span>)</strong>
+à l’échéance <span class="math inline">\(T\)</span>.
+<ul>
+<li>Payoff du Call Européen : <span class="math inline">\(h_C(S_T) =
+\max\{S_T - K, 0\} = (S_T - K)_+\)</span>.</li>
+<li>Payoff du Put Européen : <span class="math inline">\(h_P(S_T) =
+\max\{K - S_T, 0\} = (K - S_T)_+\)</span>.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="chapitre-2-taux-dintérêt-et-actualisation" class="section level3" number="2">
+<h3><span class="header-section-number">2</span> Chapitre 2 : Taux
+d’Intérêt et Actualisation</h3>
+<p>La conversion entre valeur future et valeur présente utilise les taux
+d’intérêt :</p>
+<ul>
+<li><strong>Taux Composé et Capitalisation</strong> : La Valeur Future
+(<span class="math inline">\(F_V\)</span>) d’un capital initial <span class="math inline">\(I_C\)</span> après <span class="math inline">\(T\)</span> périodes est : <span class="math display">\[F_{V} = I_{C} \prod_{k=0}^{T-1}(1+r_{k})\]</span>
+Pour un taux <span class="math inline">\(r\)</span> constant, <span class="math inline">\(F_V = I_C(1+r)^T\)</span>.</li>
+<li><strong>Actualisation (Discounting)</strong> : La Valeur Actuelle
+(<span class="math inline">\(V\)</span>) d’un flux <span class="math inline">\(F\)</span> à l’instant <span class="math inline">\(t\)</span> est : <span class="math display">\[V=\frac{F}{\prod_{k=t}^{t^{\prime}-1}(1+r_{k})}\]</span>
+Le facteur d’actualisation est <span class="math inline">\(D(t, t&#39;)
+= \prod_{k=t}^{t^{\prime}-1}(1+r_{k})^{-1}\)</span>.</li>
+<li><strong>Taux Annuel Effectif (<span class="math inline">\(r_e\)</span>)</strong> : Pour un taux <span class="math inline">\(r_a\)</span> capitalisé <span class="math inline">\(k\)</span> fois par an : <span class="math display">\[r_{e} = \left(1+\frac{r_a}{k}\right)^k -
+1\]</span></li>
+</ul>
+</div>
+<div id="chapitre-3-évaluation-déterministe-et-non-arbitrage" class="section level3" number="3">
+<h3><span class="header-section-number">3</span> Chapitre 3 : Évaluation
+Déterministe et Non-Arbitrage</h3>
+<p>Le principe fondateur de l’évaluation est l’<strong>Absence
+d’Opportunité d’Arbitrage (AAO)</strong>.</p>
+<ul>
+<li><strong>Définition d’une AO</strong> : Une stratégie
+d’investissement <span class="math inline">\((X_0, \pi)\)</span> est une
+AO si :
+<ol style="list-style-type: decimal">
+<li>Capital initial nul : <span class="math inline">\(X_0=0\)</span>.</li>
+<li>Gain non négatif certain : <span class="math inline">\(\mathbb{P}[X_T \ge 0] = 1\)</span>.</li>
+<li>Gain positif possible : <span class="math inline">\(\mathbb{P}[X_T
+&gt; 0] &gt; 0\)</span>.</li>
+</ol></li>
+<li><strong>Prix d’Arbitrage</strong> : Sous l’AAO, le prix <span class="math inline">\(p_A\)</span> d’un contrat donnant des flux
+certains <span class="math inline">\(F_i\)</span> est le coût de
+réplication : <span class="math display">\[p_{A}:=\sum_{i=1}^{T}F_{i}\times C_{i}\]</span>
+où <span class="math inline">\(C_i\)</span> est le prix du Zéro-Coupon
+de maturité <span class="math inline">\(i\)</span>.</li>
+</ul>
+</div>
+<div id="chapitre-4-le-toy-model-modèle-binomial-à-une-période" class="section level3" number="4">
+<h3><span class="header-section-number">4</span> Chapitre 4 : Le “Toy
 Model” (Modèle Binomial à une période)</h3>
-<div id="proposition-4.3.3-condition-dabsence-dopportunité-darbitrage-aao" class="section level4" number="1.1">
-<h4><span class="header-section-number">1.1</span> Proposition 4.3.3 :
+<div id="proposition-4.3.3-condition-dabsence-dopportunité-darbitrage-aao" class="section level4" number="4.1">
+<h4><span class="header-section-number">4.1</span> Proposition 4.3.3 :
 Condition d’Absence d’Opportunité d’Arbitrage (AAO)</h4>
 <p><strong>Énoncé :</strong> Il n’existe pas d’Opportunité d’Arbitrage
 (AO) sur le marché <span class="math inline">\((S^0, S)\)</span> si et
@@ -1498,10 +1583,10 @@ seulement si : <span class="math display">\[d &lt; 1+r &lt;
 u\]</span></p>
 <hr />
 </div>
-<div id="preuve" class="section level4" number="1.2">
-<h4><span class="header-section-number">1.2</span> Preuve</h4>
-<div id="condition-nécessaire" class="section level5" number="1.2.1">
-<h5><span class="header-section-number">1.2.1</span> 1. Condition
+<div id="preuve" class="section level4" number="4.2">
+<h4><span class="header-section-number">4.2</span> Preuve</h4>
+<div id="condition-nécessaire" class="section level5" number="4.2.1">
+<h5><span class="header-section-number">4.2.1</span> 1. Condition
 Nécessaire</h5>
 <p>Supposons que la relation <span class="math inline">\(d &lt; 1+r &lt;
 u\)</span> ne soit pas satisfaite. Cela signifie que soit <span class="math inline">\(d \ge 1+r\)</span>, soit <span class="math inline">\(1+r \ge u\)</span>. <br></p>
@@ -1523,8 +1608,8 @@ rendement du bon sans risque. Considérons la stratégie <span class="math inlin
 est une AO (Opportunité d’Arbitrage).</p></li>
 </ul>
 </div>
-<div id="condition-suffisante" class="section level5" number="1.2.2">
-<h5><span class="header-section-number">1.2.2</span> 2. Condition
+<div id="condition-suffisante" class="section level5" number="4.2.2">
+<h5><span class="header-section-number">4.2.2</span> 2. Condition
 Suffisante</h5>
 <p>Supposons que <span class="math inline">\(d &lt; 1+r &lt; u\)</span>
 soit vérifiée et qu’il existe une AO <span class="math inline">\((0,
@@ -1539,8 +1624,8 @@ conséquent, la seule possibilité est <span class="math inline">\(\pi =
 <hr />
 </div>
 </div>
-<div id="interprétation-intuitive-de-la-condition-4.3.1" class="section level4" number="1.3">
-<h4><span class="header-section-number">1.3</span> Interprétation
+<div id="interprétation-intuitive-de-la-condition-4.3.1" class="section level4" number="4.3">
+<h4><span class="header-section-number">4.3</span> Interprétation
 Intuitive de la Condition (4.3.1)</h4>
 <p>La condition <span class="math inline">\(d &lt; 1+r &lt; u\)</span>
 signifie que l’actif risqué <span class="math inline">\(S\)</span> est
@@ -1548,12 +1633,12 @@ effectivement plus risqué que l’actif sans risque <span class="math inline">\
 potentiel plus élevé:</p>
 <p><strong><span class="math inline">\(u &gt; 1+r\)</span></strong> : La
 valeur haute de l’actif risqué dépasse celle du bon, ce qui justifie la
-prise de risque pour l’investisseur[cite: 463]. *<strong><span class="math inline">\(d &lt; 1+r\)</span></strong> : L’actif risqué peut
+prise de risque pour l’investisseur. *<strong><span class="math inline">\(d &lt; 1+r\)</span></strong> : L’actif risqué peut
 prendre des valeurs inférieures à l’actif sans risque, ce qui définit la
 notion de risque (perte potentielle par rapport au placement sûr).</p>
 </div>
-<div id="preuve-du-capital-initial-du-portefeuille-réplicant" class="section level4" number="1.4">
-<h4><span class="header-section-number">1.4</span> Preuve du capital
+<div id="preuve-du-capital-initial-du-portefeuille-réplicant" class="section level4" number="4.4">
+<h4><span class="header-section-number">4.4</span> Preuve du capital
 initial du portefeuille réplicant</h4>
 <p>Pour répliquer un payoff <span class="math inline">\(h\)</span>, on
 cherche <span class="math inline">\((x, \pi)\)</span> tel que <span class="math inline">\(X_1 = h\)</span> dans tous les états du monde : 1.
@@ -1571,11 +1656,11 @@ isolant <span class="math inline">\(x\)</span> dans l’équation (1) :
 <hr />
 </div>
 </div>
-<div id="chapitre-5-marchés-à-temps-discret-t-périodes" class="section level3" number="2">
-<h3><span class="header-section-number">2</span> Chapitre 5 : Marchés à
+<div id="chapitre-5-marchés-à-temps-discret-t-périodes" class="section level3" number="5">
+<h3><span class="header-section-number">5</span> Chapitre 5 : Marchés à
 temps discret (T périodes)</h3>
-<div id="preuve-existence-dune-emm-implies-aao" class="section level4" number="2.1">
-<h4><span class="header-section-number">2.1</span> Preuve : Existence
+<div id="preuve-existence-dune-emm-implies-aao" class="section level4" number="5.1">
+<h4><span class="header-section-number">5.1</span> Preuve : Existence
 d’une EMM <span class="math inline">\(\implies\)</span> AAO</h4>
 <p><strong>Assertion :</strong> S’il existe une mesure de martingale
 équivalente <span class="math inline">\(\mathbb{Q}\)</span>, alors le
@@ -1598,8 +1683,8 @@ potentielle avec un capital initial <span class="math inline">\(x=0\)</span>.</l
 exister.</li>
 </ol>
 </div>
-<div id="preuve-de-lunicité-du-prix-lien-avec-lespérance" class="section level4" number="2.2">
-<h4><span class="header-section-number">2.2</span> Preuve de l’Unicité
+<div id="preuve-de-lunicité-du-prix-lien-avec-lespérance" class="section level4" number="5.2">
+<h4><span class="header-section-number">5.2</span> Preuve de l’Unicité
 du Prix (Lien avec l’Espérance)</h4>
 <p>Le prix d’un actif réplicable <span class="math inline">\(V_t\)</span> à l’instant <span class="math inline">\(t\)</span> est donné par : <span class="math display">\[\tilde{V}_t = \mathbb{E}^{\mathbb{Q}}[\tilde{V}_T
 | \mathcal{F}_t] \implies V_t = \frac{1}{(1+r)^{T-t}}
@@ -1609,8 +1694,8 @@ une valeur actualisée qui est une <span class="math inline">\(\mathbb{Q}\)</spa
 | \mathcal{F}_t]\)</span>. Par absence d’arbitrage, le prix de l’actif
 doit être égal à la valeur du portefeuille réplicant, soit <span class="math inline">\(V_t = X_t\)</span>.</p>
 </div>
-<div id="preuve-5.4.5-théorème-fondamental---étape-dexistence" class="section level4" number="2.3">
-<h4><span class="header-section-number">2.3</span> Preuve 5.4.5
+<div id="preuve-5.4.5-théorème-fondamental---étape-dexistence" class="section level4" number="5.3">
+<h4><span class="header-section-number">5.3</span> Preuve 5.4.5
 (Théorème Fondamental - Étape d’existence)</h4>
 <p><em>Note : Cette preuve repose sur la séparation des ensembles
 convexes (Théorème de Hahn-Banach).</em> On définit <span class="math inline">\(K\)</span> comme l’ensemble des richesses
