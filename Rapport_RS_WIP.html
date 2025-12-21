@@ -1486,233 +1486,828 @@ border-radius: 0px;
 </div>
 
 
-<div id="chapitre-1-vocabulaire-et-fonctions" class="section level3" number="1">
-<h3><span class="header-section-number">1</span> Chapitre 1 :
-Vocabulaire et Fonctions</h3>
-<p>Les marchés financiers assurent trois rôles primordiaux :</p>
+<style type="text/css">
+.definition-box {
+border: 2px solid #3498db;
+border-left: 6px solid #3498db;
+border-radius: 8px;
+padding: 15px 20px;
+margin: 20px 0;
+background-color: #f8fafc;
+box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+width: 100%;
+box-sizing: border-box;
+overflow: visible;
+clear: both;
+}
+.definition-title {
+color: #2c3e50;
+font-weight: bold;
+margin-bottom: 10px;
+font-size: 1.1em;
+border-bottom: 1px solid #e0e0e0;
+padding-bottom: 5px;
+}
+.definition-item {
+margin: 10px 0;
+line-height: 1.5;
+}
+.definition-box .definition-item .math {
+overflow-x: auto;
+padding: 5px 0;
+}
+.definition-box ul {
+margin-top: 8px;
+margin-bottom: 8px;
+padding-left: 20px;
+}
+.definition-box li {
+margin-bottom: 4px;
+}
+</style>
+<style type="text/css">
+
+.math {
+display: inline-block !important;
+vertical-align: middle !important;
+line-height: 1.2 !important;
+margin: 0 1px !important;
+}
+
+.mjx-msub .mjx-sub {
+font-size: 70% !important;
+bottom: -0.2em !important;
+}
+
+.mjx-mi + .mjx-msub {
+vertical-align: -0.1em !important;
+}
+
+.definition-item, p, li {
+line-height: 1.6 !important;
+}
+
+.math + span, span + .math {
+vertical-align: middle !important;
+}
+.figure {
+text-align: center;
+margin: 20px 0;
+}
+
+.caption {
+font-style: italic;
+margin-top: 10px;
+font-size: 0.9em;
+}
+.theorem-box {
+border: 2px solid #2e8b57; 
+border-left: 6px solid #3cb371;
+border-radius: 8px;
+padding: 15px 20px;
+margin: 25px 0;
+background-color: #f0fff8; 
+box-shadow: 0 4px 6px rgba(46, 139, 87, 0.1);
+}
+.theorem-title {
+color: #2e8b57;
+font-weight: bold;
+margin-bottom: 10px;
+font-size: 1.1em;
+border-bottom: 1px solid #90ee90;
+padding-bottom: 5px;
+}
+</style>
+<p>```</p>
+<div id="le-rôle-des-marchés-financiers" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Le rôle des marchés
+financiers</h1>
+<p>Les marchés financiers remplissent trois fonctions essentielles :</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Allocation intertemporelle de Liquidités (Cash
-Flows)</strong> : Transfert de pouvoir d’achat du présent vers le futur
-(épargne) et inversement (emprunt).</p></li>
-<li><p><strong>Allocation et Réallocation des Risques</strong> :
-Distribution optimale de l’incertitude entre les agents.</p></li>
-<li><p><strong>Efficience et Information</strong> : Les prix servent de
-signaux. Sous l’<strong>Hypothèse des Marchés Efficaces (Efficient
-Market Hypothesis)</strong>, les prix reflètent toute l’information
-disponible.</p></li>
+<li><p><strong>Les transferts de capitaux</strong> : Deux catégories
+d’agents coexistent : les agents à capacité de financement
+(investisseurs : ménages, institutions) et ceux à besoin de financement
+(entreprises, États, collectivités). Le marché assure la rencontre entre
+ces acteurs en organisant le transfert des capitaux via l’émission et
+l’achat de titres financiers (actions, obligations). Ce mécanisme permet
+de transformer l’épargne en investissements productifs.</p></li>
+<li><p><strong>La gestion et le transfert des risques</strong> : Ils
+offrent aux acteurs économiques des produits pour couvrir, mutualiser ou
+transférer leurs risques. Cette fonction contribue à stabiliser les
+positions des investisseurs et des emprunteurs face aux aléas des
+marchés.<br />
+<em>Exemple : les assurances, la couverture avec des produits dérivés
+comme les futures ou les options de vente</em></p></li>
+<li><p><strong>Un Rôle informationnel</strong> : Les marchés financiers
+génèrent en continu de l’information sur la valeur des entreprises et la
+perception des risques. Les prix de marché (actions, obligations, etc.)
+constituent ainsi des signaux reflétant la santé économique de ces
+entreprises et de l’économie en général.<br />
+Ce rôle est formalisé par l’<strong>Hypothèse des Marchés
+Efficients</strong>, selon laquelle les prix intègrent instantanément
+toute l’information disponible passée. En pratique, cette hypothèse
+admet des limites : les prix peuvent s’écarter de la valeur fondamentale
+à court terme, car ils sont déterminés par le mécanisme de l’offre et de
+la demande et non par des indicateurs comme le chiffre
+d’affaires.</p></li>
 </ol>
-<div id="typologie-des-actifs" class="section level4" number="1.1">
-<h4><span class="header-section-number">1.1</span> Typologie des Actifs
-:</h4>
+</div>
+<div id="vocabulaire" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Vocabulaire</h1>
+<div class="definition-box">
+<div class="definition-title">
+Flux de trésorerie (Cash flow)
+</div>
+<div class="definition-item">
+<p>Transfert d’une somme d’argent entre deux agents. Un flux positif
+représente un <strong>encaissement</strong> pour le bénéficiaire, un
+flux négatif un <strong>décaissement</strong>.</p>
+</div>
+</div>
+<div class="definition-box">
+<div class="definition-title">
+Titre financier (Security / Financial claim)
+</div>
+<div class="definition-item">
+Actif conférant à son détenteur le droit à une <strong>séquence de flux
+de trésorerie futurs</strong>. Il est défini par :
 <ul>
-<li><strong>Actions (Stocks)</strong> : Titres de propriété.</li>
-<li><strong>Obligations (Bonds)</strong> : Titres de créance. Définis
-par :
+<li>
+Le nombre et les dates (déterministes ou aléatoires) des flux.
+</li>
+<li>
+La nature des flux : <strong>déterministes</strong> (titre sans risque)
+ou <strong>aléatoires</strong> (titre risqué).
+</li>
+<li>
+La monnaie de libellé(numéraire) dans laquelle les flux sont payés.
+</li>
+</ul>
+</div>
+</div>
+<div id="type-de-produits-financiers" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Type de produits
+financiers:</h2>
 <ul>
-<li><strong>Nominal (<span class="math inline">\(N\)</span>)</strong> :
-Capital emprunté.</li>
-<li><strong>Coupons (<span class="math inline">\(C\)</span>)</strong> :
-Paiements périodiques.</li>
-<li><strong>Maturité (<span class="math inline">\(T\)</span>)</strong> :
-Date de remboursement du nominal.</li>
+<li><p><strong>Actions (Stocks)</strong> : Titres de propriété - Part du
+capital d’une entreprise donnant droit à son propriétaire de percevoir
+des dividendes et de participer aux décisions de l’entreprise.</p></li>
+<li><p><strong>Obligations (Bonds)</strong> : Titres de créance. - Forme
+spécifique de prêt émis pour lever des fonds importants sur des
+maturités longues (10-20 ans).</p>
+<ul>
+<li><strong>Mécanisme de base</strong> :
+<ul>
+<li>À l’émission : l’investisseur paie le prix d’émission <span class="math inline">\(I\)</span> à l’émetteur</li>
+<li>Périodiquement : l’émetteur verse un coupon <span class="math inline">\(C = N \times z\)</span><br />
+(<span class="math inline">\(N\)</span> = nominal, <span class="math inline">\(z\)</span> = taux d’intérêt)</li>
+<li>À l’échéance : l’émetteur rembourse le montant <span class="math inline">\(R\)</span></li>
 </ul></li>
-<li><strong>Options</strong> : Droit (non obligation) d’acheter
-(<strong>Call</strong>) ou de vendre (<strong>Put</strong>) un
-<strong>Sous-jacent (<span class="math inline">\(S\)</span>)</strong> à
-un prix <strong>Strike (<span class="math inline">\(K\)</span>)</strong>
-à l’échéance <span class="math inline">\(T\)</span>.
+<li><strong>Caractéristiques principales</strong> :
+<ul>
+<li>Prix d’émission (<span class="math inline">\(I\)</span>) : Montant
+effectivement payé par l’investisseur.</li>
+<li>Nominal (<span class="math inline">\(N\)</span>) : Capital
+emprunté.</li>
+<li>Taux d’intérêt (<span class="math inline">\(z\)</span>) : Taux
+contractuel utilisé pour calculer les coupons.</li>
+<li>Coupons (<span class="math inline">\(C\)</span>) : Paiements
+périodiques.</li>
+<li>Montant de remboursement (<span class="math inline">\(R\)</span>) :
+Somme versée à l’échéance.</li>
+<li>Maturité (<span class="math inline">\(T\)</span>) : Date de
+remboursement du nominal.</li>
+</ul></li>
+<li><strong>Termes complémentaires</strong> :
+<ul>
+<li>Émission <strong>au pair</strong> : <span class="math inline">\(I =
+N\)</span></li>
+<li>Émission <strong>en dessous du pair</strong> : <span class="math inline">\(I &lt; N\)</span></li>
+<li>Émission <strong>au-dessus du pair</strong> : <span class="math inline">\(I &gt; N\)</span></li>
+<li>Remboursement au pair : <span class="math inline">\(R =
+N\)</span>.</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Obligation à coupon zéro (Zero-coupon bond)</strong> :
+Obligation avec taux d’intérêt zéro (z = 0).</p></li>
+<li><p><strong>Produit dérivés</strong> : Contrat financier</p>
+<ul>
+<li><strong>Contrat à terme (Future/Forward) </strong> : Contrat où une
+partie <strong>s’engage</strong> à acheter/vendre un actif à une date
+future T à un prix fixé K (le strike).</li>
+<li><strong>Option</strong> : <strong>Droit</strong> (non obligation)
+d’acheter (call) ou de vendre (put) un actif à une date future à un prix
+prédéterminé.
 <ul>
 <li>Payoff du Call Européen : <span class="math inline">\(h_C(S_T) =
 \max\{S_T - K, 0\} = (S_T - K)_+\)</span>.</li>
 <li>Payoff du Put Européen : <span class="math inline">\(h_P(S_T) =
 \max\{K - S_T, 0\} = (K - S_T)_+\)</span>.</li>
 </ul></li>
+</ul></li>
 </ul>
 </div>
 </div>
-<div id="chapitre-2-taux-dintérêt-et-actualisation" class="section level3" number="2">
-<h3><span class="header-section-number">2</span> Chapitre 2 : Taux
-d’Intérêt et Actualisation</h3>
-<p>La conversion entre valeur future et valeur présente utilise les taux
-d’intérêt :</p>
-<ul>
-<li><strong>Taux Composé et Capitalisation</strong> : La Valeur Future
-(<span class="math inline">\(F_V\)</span>) d’un capital initial <span class="math inline">\(I_C\)</span> après <span class="math inline">\(T\)</span> périodes est : <span class="math display">\[F_{V} = I_{C} \prod_{k=0}^{T-1}(1+r_{k})\]</span>
-Pour un taux <span class="math inline">\(r\)</span> constant, <span class="math inline">\(F_V = I_C(1+r)^T\)</span>.</li>
-<li><strong>Actualisation (Discounting)</strong> : La Valeur actualisée
-(<span class="math inline">\(V\)</span>) d’un flux <span class="math inline">\(F\)</span> à l’instant <span class="math inline">\(t\)</span> est : <span class="math display">\[V=\frac{F}{\prod_{k=t}^{t^{\prime}-1}(1+r_{k})}\]</span>
-Le facteur d’actualisation est <span class="math inline">\(D(t, t&#39;)
-= \prod_{k=t}^{t^{\prime}-1}(1+r_{k})^{-1}\)</span>.</li>
-</ul>
+<div id="taux-dintérêt-et-actualisation" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Taux d’Intérêt et
+Actualisation</h1>
+<p>Le taux d’intérêt est le prix payé pour l’utilisation de l’argent
+d’autrui sur une période donnée. Il représente la compensation pour le
+report de consommation. Nous nous intéressons principalement aux
+intérêts composés.</p>
+<div class="definition-box">
+<div class="definition-title">
+Taux Composé et Capitalisation
 </div>
-<div id="chapitre-3-arbitrage" class="section level3" number="3">
-<h3><span class="header-section-number">3</span> Chapitre 3 :
-Arbitrage</h3>
-<p>Le principe fondateur de l’évaluation est l’<strong>Absence
-d’Opportunité d’Arbitrage (AAO)</strong>.</p>
+<div class="definition-item">
+Les intérêts composés (compound interest) se calculent non seulement sur
+le capital initial, mais aussi sur les intérêts accumulés des périodes
+précédentes. La <strong>Valeur Future (<span class="math inline">\(F_V\)</span>)</strong> d’un capital initial <span class="math"><span class="math inline">\(I_C\)</span></span> après <span class="math"><span class="math inline">\(T\)</span></span> périodes est
+:<br>
+<center>
+<span class="math display">\[F_{V} = I_{C}
+\prod_{k=0}^{T-1}(1+r_{k})\]</span>
+</center>
+<p></br> où <span class="math"><span class="math inline">\(r_k\)</span></span> est le taux d’intérêt pour la
+période <span class="math"><span class="math inline">\(k\)</span></span>.</p>
+Pour un taux <span class="math"><span class="math inline">\(r\)</span></span> constant, la formule se
+simplifie en :<br>
+<center>
+<span class="math display">\[F_V = I_C(1+r)^T\]</span>
+</center>
+<p></br> Ce qui représente la capitalisation des intérêts sur plusieurs
+périodes.</p>
+</div>
+</div>
+<p>L’actualisation (discounting) répond à la question : <strong>“Que
+vaut aujourd’hui un euro reçu dans le futur ?”</strong>. Elle permet de
+comparer différents flux à différentes dates en les ramenenant à une
+date commune.</p>
+<div class="definition-box">
+<div class="definition-title">
+Actualisation (Discounting)
+</div>
+<div class="definition-item">
+La <strong>Valeur Actualisée (<span class="math inline">\(V\)</span>)</strong> d’un flux <span class="math"><span class="math inline">\(F\)</span></span> à recevoir à
+l’instant <span class="math"><span class="math inline">\(t&#39;\)</span></span>, évaluée à l’instant <span class="math"><span class="math inline">\(t\)</span></span>, est :<br>
+<center>
+<span class="math display">\[V=\frac{F}{\prod_{k=t}^{t^{\prime}-1}(1+r_{k})}\]</span>
+</center>
+<p></br> où <span class="math"><span class="math inline">\(r_k\)</span></span> est le taux d’actualisation
+pour la période <span class="math"><span class="math inline">\(k\)</span></span>.</p>
+Le <strong>Facteur d’Actualisation</strong> entre les dates <span class="math"><span class="math inline">\(t\)</span></span> et <span class="math"><span class="math inline">\(t&#39;\)</span></span> est
+défini par :<br>
+<center>
+<span class="math display">\[D(t, t&#39;) =
+\prod_{k=t}^{t^{\prime}-1}(1+r_{k})^{-1}\]</span>
+</center>
+<p></br> Ce facteur permet de ramener un flux futur à sa valeur
+présente.</p>
+</div>
+</div>
+</div>
+<div id="une-première-approche-du-pricing-cadre-non-aléatoire" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Une Première Approche
+du Pricing : Cadre Non-Aléatoire</h1>
+<div id="introduction-à-la-notion-darbitrage" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Introduction à la
+notion d’Arbitrage</h2>
+<p>Afin d’aborder cette première approche de pricing dans un cadre
+déterministe, il nous faut d’abord définir la notion d’arbitrage. Elle
+sera ensuite reprise plus en détail dans la suite du rapport pour le
+model probabiliste.</p>
+<div class="definition-box">
+<div class="definition-title">
+Opportunité d’Arbitrage (AO)
+</div>
+<div class="definition-item">
+<p>Une stratégie d’investissement <span class="math inline">\((X_0,
+\pi)\)</span> est une opportunité d’arbitrage si elle satisfait les
+trois conditions :</p>
+</div>
+<p><strong>1. Capital initial nul</strong> : <span class="math inline">\(X_0 = 0\)</span><br> Aucun investissement
+personnel requis au départ.</p>
+<p><strong>2. Gain non-négatif certain</strong> : <span class="math inline">\(\mathbb{P}[X_T \ge 0] = 1\)</span><br> Absence de
+risque de perte à l’horizon <span class="math inline">\(T\)</span>.</p>
+<p><strong>3. Gain strictement positif possible</strong> : <span class="math inline">\(\mathbb{P}[X_T &gt; 0] &gt; 0\)</span><br>
+Probabilité non nulle de réaliser un profit.</p>
+<p>En résumé : Une AO permet de réaliser un profit sans risque et sans
+mise de fonds initiale.</p>
+</div>
+</div>
+<div id="cas-déterministe-le-prix-dune-obligation-à-coupon-zéro-z.c." class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Cas déterministe : Le
+Prix d’une Obligation à Coupon Zéro (z.c.)</h2>
+<p>Nous analysons comment déterminer un prix équitable pour des produits
+financiers générant des flux de trésorerie déterministes à des dates
+déterministes.</p>
+<p>Considérons un marché avec :</p>
 <ul>
-<li><strong>Définition d’une AO</strong> : Une stratégie
-d’investissement <span class="math inline">\((X_0, \pi)\)</span> est une
-AO si :
+<li><strong>Un taux d’intérêt annuel composé</strong> <span class="math inline">\(r \geq 0\)</span></li>
+<li><strong>Une obligation z.c.</strong> de maturité <span class="math inline">\(T\)</span> et nominal 1€.</li>
+</ul>
+<p><strong>Question</strong> : Quel devrait être le prix équitable <span class="math inline">\(p\)</span> de cette obligation à <span class="math inline">\(t = 0\)</span> ?</p>
+<p>Le prix de ce contrat est égal à la <strong>valeur actualisée
+théorique</strong> : <span class="math inline">\((1 +
+r)^{-T}\)</span></p>
+<div style="margin-left: 30px; padding-left: 15px; border-left: 2px solid #666; color: #444; font-style: italic;">
+<p><strong>Si <span class="math inline">\(p &lt; (1 +
+r)^{-T}\)</span></strong> (l’obligation est sous-évaluée) :</p>
+<p><strong>Stratégie d’arbitrage</strong> : <strong>À <span class="math inline">\(t=0\)</span></strong> <br></p>
 <ol style="list-style-type: decimal">
-<li>Capital initial nul : <span class="math inline">\(X_0=0\)</span>.</li>
-<li>Gain non négatif certain : <span class="math inline">\(\mathbb{P}[X_T \ge 0] = 1\)</span>.</li>
-<li>Gain positif possible : <span class="math inline">\(\mathbb{P}[X_T
-&gt; 0] &gt; 0\)</span>.</li>
-</ol></li>
-<li><strong>Prix d’Arbitrage</strong> : Sous l’AAO, le prix <span class="math inline">\(p_A\)</span> d’un contrat donnant des flux
+<li>Emprunter <span class="math inline">\((1 + r)^{-T}\)</span> à la
+banque (taux <span class="math inline">\(r\)</span>)</br> <br></li>
+<li>Acheter 1 unité d’obligation z.c. au prix <span class="math inline">\(p\)</span></br> <br></li>
+<li>Investir la différence <span class="math inline">\((1 + r)^{-T} - p
+&gt; 0\)</span> à la banque (taux <span class="math inline">\(r\)</span>)<br /></li>
+</ol>
+<p><strong>Résultat à l’échéance <span class="math inline">\(t=T\)</span></strong> :<br></p>
+<ol style="list-style-type: decimal">
+<li>Rembourser le prêt : <span class="math inline">\(-1€\)</span></br>
+<br></li>
+<li>Recevoir le nominal : <span class="math inline">\(+1€\)</span></br>
+<br></li>
+<li>Recevoir l’investissement : <span class="math inline">\(+[1 -
+p(1+r)^T] &gt; 0\)</span></br></li>
+</ol>
+<p>→ <strong>Profit certain sans capital initial</strong> : il y a
+<strong>arbitrage</strong>.</p>
+</div>
+<p><strong>Conclusion</strong> : Le prix d’équilibre est nécessairement
+: <span class="math display">\[ p(t, T) = (1 + r)^{-(T-t)} \]</span></p>
+</div>
+<div id="le-principe-de-réplication-extension-au-prix-dun-contrat-générique-c" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Le principe de
+réplication : Extension au prix d’un contrat générique C</h2>
+<p>Nous cherchons maintenant à déterminer le prix d’un contrat générique
+C qui génère les flux :</p>
+<ul>
+<li><span class="math inline">\(t=1\)</span> : +10€</li>
+<li><span class="math inline">\(t=2\)</span> : +20€</li>
+</ul>
+<p><strong>Notations</strong> :</p>
+<ul>
+<li><strong><span class="math inline">\(x\)</span></strong> : Prix de
+marché du contrat C (inconnu à déterminer)</li>
+<li><strong><span class="math inline">\(C_1\)</span></strong> : Prix
+d’un zéro-coupon de maturité 1 an et nominal 1€</li>
+<li><strong><span class="math inline">\(C_2\)</span></strong> : Prix
+d’un zéro-coupon de maturité 2 ans et nominal 1€</li>
+</ul>
+<p>Pour déterminer le prix équitable de C, nous allons le
+<strong>répliquer</strong> avec des actifs de base dont nous connaissons
+le prix : les <strong>zéro-coupons</strong>.</p>
+<p><strong>Construction du portefeuille de réplication</strong> :</p>
+<ul>
+<li>Pour répliquer le flux de 10€ à <span class="math inline">\(t=1\)</span> : Acheter <strong>10 unités</strong>
+de zéro-coupons de maturité 1 an</li>
+<li>Pour répliquer le flux de 20€ à <span class="math inline">\(t=2\)</span> : Acheter <strong>20 unités</strong>
+de zéro-coupons de maturité 2 ans</li>
+</ul>
+<p>De ce fait, le coût total du portefeuille répliquant est : <span class="math display">\[ \text{Coût} = 10 \times C_1 + 20 \times C_2
+\]</span> où <span class="math inline">\(C_1\)</span> et <span class="math inline">\(C_2\)</span> sont les prix des zéro-coupons de
+maturités 1 et 2 ans.</p>
+<div style="margin-left: 30px; padding-left: 15px; border-left: 2px solid #666; color: #444; font-style: italic;">
+<p><strong>Prix d’arbitrage par réplication</strong> : Sous l’hypothèse
+d’absence d’arbitrage, le contrat C <strong>doit</strong> avoir le même
+prix que son portefeuille de réplication : <span class="math display">\[
+x = 10 \times C_1 + 20 \times C_2 \]</span></p>
+<p>Si <span class="math inline">\(x\)</span> (prix de marché) ≠ coût de
+réplication, alors :</p>
+<ul>
+<li><strong>Cas 1 : <span class="math inline">\(x &gt; 10C_1 +
+20C_2\)</span></strong> <br>
+<ul>
+<li>Stratégie : Vendre C au prix <span class="math inline">\(x\)</span>,
+acheter le portefeuille réplicant (coût <span class="math inline">\(10C_1 + 20C_2\)</span>)</br><br></li>
+</ul></li>
+<li><strong>Si <span class="math inline">\(x &lt; 10C_1 +
+20C_2\)</span></strong> : <br>
+<ul>
+<li>Stratégie : Acheter C au prix <span class="math inline">\(x\)</span>, vendre le portefeuille réplicant
+(reçoit <span class="math inline">\(10C_1 +
+20C_2\)</span>)</br><br></li>
+</ul></li>
+</ul>
+<p>Dans les deux cas → <strong>opportunité d’arbitrage</strong>.</p>
+</div>
+<p><strong>Expression finale avec taux <span class="math inline">\(r\)</span></strong> : En remplaçant <span class="math inline">\(C_1\)</span> et <span class="math inline">\(C_2\)</span> par leurs valeurs actualisées : <span class="math display">\[ x = 10 \times (1+r)^{-1} + 20 \times (1+r)^{-2}
+= \frac{10}{1+r} + \frac{20}{(1+r)^2} \]</span></p>
+<p>Ainsi, pour un marché sans opportunité d’arbitrage, le prix <span class="math inline">\(p_A\)</span> d’un contrat donnant des flux
 certains <span class="math inline">\(F_i\)</span> est le coût de
 réplication : <span class="math display">\[p_{A}:=\sum_{i=1}^{T}F_{i}\times C_{i}\]</span>
 où <span class="math inline">\(C_i\)</span> est le prix du Zéro-Coupon
-de maturité <span class="math inline">\(i\)</span>.</li>
+de maturité <span class="math inline">\(i\)</span>.</p>
+</div>
+</div>
+<div id="cas-probabiliste-modèle-de-cox-ross-rubinstein-binomial" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Cas probabiliste:
+Modèle de Cox-Ross-Rubinstein (Binomial)</h1>
+<p>Dans cette partie nous cherchons à évaluer des actifs financiers en
+introduisant un aléas : la valeur des flux futurs. Nous nous appuierons
+donc sur le <strong>modèle de Cox-Ross-Rubinstein(aussi appelé le modèle
+binomial )</strong></p>
+<div id="définition-du-modèle-binomial" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Définition du modèle
+binomial</h2>
+<p>À chaque période, le prix d’un actif ne peut prendre que deux valeurs
+possibles :</p>
+<ul>
+<li><strong>Hausse</strong> : Prix multiplié par <span class="math inline">\(u\)</span> (<span class="math inline">\(u &gt;
+1\)</span>) avec probalilité <span class="math inline">\(p\)</span><br />
+</li>
+<li><strong>Baisse</strong> : Prix multiplié par <span class="math inline">\(d\)</span> (<span class="math inline">\(0 &lt; d
+&lt; 1\)</span>) avec probalilité <span class="math inline">\(1-p\)</span><br />
+</li>
+<li><strong><span class="math inline">\(S_0\)</span></strong> : Prix
+initial de l’actif à <span class="math inline">\(t=0\)</span></li>
+</ul>
+<div class="figure" style="text-align: center">
+<img role="img" aria-label="Modèle binomial à une période" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAmUAAAHcCAIAAAAYwEpQAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA2mVYSWZNTQAqAAAACAAGARIAAwAAAAEAAQAAARoABQAAAAEAAABWARsABQAAAAEAAABeATEAAgAAAEMAAABmATsAAgAAAAUAAACqh2kABAAAAAEAAACwAAAAAAAAAGAAAAABAAAAYAAAAAFDYW52YSBkb2M9REFHNzB5a1pCcDAgdXNlcj1VQUR0RHhSNHVpVSBicmFuZD1CQUR0RHlpbHlhcyB0ZW1wbGF0ZT0AAEtyaXMAAAADoAEAAwAAAAEAAQAAoAIABAAAAAEAAAJloAMABAAAAAEAAAHcAAAAAPO34/QAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAZsaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJYTVAgQ29yZSA2LjAuMCI+CiAgIDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgICAgICAgICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICAgICAgICAgICB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOkF0dHJpYj0iaHR0cDovL25zLmF0dHJpYnV0aW9uLmNvbS9hZHMvMS4wLyI+CiAgICAgICAgIDx4bXA6Q3JlYXRvclRvb2w+Q2FudmEgZG9jPURBRzcweWtaQnAwIHVzZXI9VUFEdER4UjR1aVUgYnJhbmQ9QkFEdER5aWx5YXMgdGVtcGxhdGU9PC94bXA6Q3JlYXRvclRvb2w+CiAgICAgICAgIDxkYzpjcmVhdG9yPgogICAgICAgICAgICA8cmRmOlNlcT4KICAgICAgICAgICAgICAgPHJkZjpsaT5LcmlzPC9yZGY6bGk+CiAgICAgICAgICAgIDwvcmRmOlNlcT4KICAgICAgICAgPC9kYzpjcmVhdG9yPgogICAgICAgICA8ZGM6dGl0bGU+CiAgICAgICAgICAgIDxyZGY6QWx0PgogICAgICAgICAgICAgICA8cmRmOmxpIHhtbDpsYW5nPSJ4LWRlZmF1bHQiPlMgLSAxPC9yZGY6bGk+CiAgICAgICAgICAgIDwvcmRmOkFsdD4KICAgICAgICAgPC9kYzp0aXRsZT4KICAgICAgICAgPGV4aWY6UGl4ZWxYRGltZW5zaW9uPjE5MjA8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpDb2xvclNwYWNlPjE8L2V4aWY6Q29sb3JTcGFjZT4KICAgICAgICAgPGV4aWY6UGl4ZWxZRGltZW5zaW9uPjEwODA8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICAgICA8dGlmZjpYUmVzb2x1dGlvbj45NjwvdGlmZjpYUmVzb2x1dGlvbj4KICAgICAgICAgPHRpZmY6WVJlc29sdXRpb24+OTY8L3RpZmY6WVJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgICAgIDxBdHRyaWI6QWRzPgogICAgICAgICAgICA8cmRmOlNlcT4KICAgICAgICAgICAgICAgPHJkZjpsaSByZGY6cGFyc2VUeXBlPSJSZXNvdXJjZSI+CiAgICAgICAgICAgICAgICAgIDxBdHRyaWI6VG91Y2hUeXBlPjI8L0F0dHJpYjpUb3VjaFR5cGU+CiAgICAgICAgICAgICAgICAgIDxBdHRyaWI6Q3JlYXRlZD4yMDI1LTEyLTE4PC9BdHRyaWI6Q3JlYXRlZD4KICAgICAgICAgICAgICAgICAgPEF0dHJpYjpFeHRJZD4yNWIxM2ZlYy01YzlmLTQ4MjYtYmJhZC02MzcxZDdiYTlkOTk8L0F0dHJpYjpFeHRJZD4KICAgICAgICAgICAgICAgICAgPEF0dHJpYjpGYklkPjUyNTI2NTkxNDE3OTU4MDwvQXR0cmliOkZiSWQ+CiAgICAgICAgICAgICAgIDwvcmRmOmxpPgogICAgICAgICAgICA8L3JkZjpTZXE+CiAgICAgICAgIDwvQXR0cmliOkFkcz4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CuEu9lkAAEAASURBVHgB7Z13nBRVuoYdchCQoCBRhiyC/BAQVkAQBMQRUEBdQXIS3UW94hIMu8qQZWFFJUkQWJQBJUkWBBVWARUM5KgkCSJBYFfgvlprbTPTE7ur+1TVM3+41dVV53zf8/W9L6fqnPfEXLly5Rr+IAABCEAAAhBIkUCmFL/lSwhAAAIQgAAEfiWAXvI7gAAEIAABCKROAL1MnRFXQAACEIAABNBLfgMQgAAEIACB1Amgl6kz4goIQAACEIAAeslvAAIQgAAEIJA6AfQydUZcAQEIQAACEEAv+Q1AAAIQgAAEUieAXqbOiCsgAAEIQAAC6CW/AQhAAAIQgEDqBNDL1BlxBQQgAAEIQAC95DcAAQhAAAIQSJ0Aepk6I66AAAQgAAEIoJf8BiAAAQhAAAKpE0AvU2fEFRCAAAQgAAH0kt8ABCAAAQhAIHUC6GXqjLgCAhCAAAQggF7yG4AABCAAAQikTgC9TJ0RV0AAAhCAAATQS34DEIAABCAAgdQJoJepM+IKCEAAAhCAAHrJbwACEIAABCCQOgH0MnVGXAEBCEAAAhBAL/kNQAACEIAABFIngF6mzogrIAABCEAAAuglvwEIQAACEIBA6gTQy9QZcQUEIAABCEAAveQ3AAEIQAACEEidAHqZOiOugAAEIAABCKCX/AYgAAEIQAACqRNAL1NnxBUQgAAEIAAB9JLfAAQgAAEIQCB1Auhl6oy4AgIQgAAEIIBe8huAAAQgAAEIpE4AvUydEVdAAAIQgAAE0Et+AxCAAAQgAIHUCaCXqTPiCghAAAIQgAB6yW8AAhCAAAQgkDoB9DJ1RlwBAQhAAAIQQC/5DUAAAhCAAARSJ4Beps6IKyAAAQh4nsClS5cOHjy4d+/e8+fP28leuXLl6NGj9kefH6CXPv8BkD4EIOB3Aj/88MNjjz1WqFCh4sWLx8bG5smTp0GDBhMmTDh16tRbb7314osv+h3Q7/mjl7+T4H8hAAEI+I/Anj17atasOW7cuBo1arz33nubNm16++23JZk9e/bMnz9/p06d/Ick2YyzJPsNX0AAAhCAgKcJ6HHrQw89dODAgUceeWTmzJlWrtWrV2/Tpk1CQkKHDh0uXLjgaQDpS47xZfp4cTUEIAABzxBYvnz5xo0blc4LL7yQKKm2bdtq0JnopM8/opc+/wGQPgQg4F8CK1eutJIvUaJEUgodO3asU6dO0vO+PYNe+rb0JA4BCPidwKFDhywE27ZtC8pC84CCnvfnSfTSn3UnawhAAALXaF6PRWHMmDFBcdx2221Bz/vzJHrpz7qTNQQgAIFrbrnlFouC1o1MmjQpKZGyZcs2bNgw6Xl/nkEv/Vl3soYABCBwjSbH5syZ0wLRo0ePkSNHJoKSLVs2XZPoZMY+nj59+u67787x+9/o0aOtdubPn1+1atXfT+dYsWJFxtqPwF3oZQQg0wUEIAABEwlcf/318fHxVmRaW9K3b9+4uLgjR444EWvevHmlhffee+/F3/5++eUXq5eWLVtqjm6ZMmWs87IZcqL3sLSJXoYFI41AAAIQcCWBp556KnBSz/vvv1+5cuU5c+Y4lMw999yTtGWNYps2bZr0vGln0EvTKkI8EIAABCJK4LXXXhs4cGBMTIzV68mTJ7X4smvXroFGsuEK6LrrrgvaVIECBYKeN+okemlUOQgGAhCAQKQJSCkHDRq0YMGCggUL2n1PnjxZiy/tBSf2eT8foJd+rj65QwACEPgvAb253LJli6bk2EQ2b95cv379EydO2Gd8foBe+vwHQPoQgAAE/kugaNGiy5YtGzZsWObMma1Tu3fv1rxZAFkE0Et+CRCAAAQg8F8Cejb77LPPLl682F5nok1Ltm/fDiARQC/5GUAAAhDwKYF169YdO3YsafJNmjSZOnWqdV7rTGbMmJH0Gh+eQS99WHRShgAEIPArAe1P8tlnnwVl8eCDD95xxx3WV1999VXQa/x2Er30W8XJFwIQgMD/CHz99df/+3D1UfPmza0T9uvMq7//7yc5DEycOFE7aPbv3//HH38Meo03TqKX3qgjWUAAAn4ksHDhwhDTnj59enItFCpUyPoqNjY2uWtk0yPLHg1AZT8r93YNSc+ePZvcxYHn9Zg38KMrjtFLV5SJICEAAQhcReCNN94oXbr0M888I1/Wq75I54dvvvkmISEh6E179uyxzrdu3TroBTqphZsfffTR0KFDc+XKpfHlmTNn+vXrl9zFOn/ttdda3x49etS+7PLly/ZOnCbrKHppl4wDCEAAAqYTOHfu3KuvvlqyZMnx48dr4cfWrVvlyxpi0N27d//iiy8SNfLTTz9p0xKd1Nyf2rVrJ/rW+ih11EZg+lZiqTOaW6vNTN58881Tp04FvV4nteGJ9dW7776rLnQsvdfG1Pny5bPOf/vtt8Y+1EUvrRrxXwhAAAJGE5C6vPzyy6VKldJwUA8/v/zyS03JyZQpDP8/XC3rOerw4cNtodq7d6+esh4+fFjylsLk2FWrVkkaK1WqZIOT9+yFCxe0BMU+k+hADVrTiNRFhQoVpK/KSHfVrFnTulKe77169Up0lyEfw8DakEwIAwIQgIAnCcjQ9bnnnpOu6MnnvHnz1q5dqzFfuDK97777JG8aYo4YMeKGG26QnknGtFvIp59+2qFDB+0coj1MkutLkeirYsWK2RcUL15cx+vXr7fPJD14/fXXixQpovN6JCtHIY2SrUe40n7tHaZXoe+8807Su0w4k8WEIIgBAhCAAASSEpCiSMbGjRt311136Q1fjRo1kl4Tyhk1K6WU4LVq1UqbX2q8KGsCPfLV895GjRpZqpZC+xoj6tv8+fPb11i26VJB+0zSA+12uWvXLml/1qxZa9WqpVlCuuaBBx6QybukOun15pxBL82pBZFAAAIQ+C+B77//XpNopkyZokUdGq5VqVLFCTSyh7WblXppUy392WdSPbCe39pOQLpe2z7rvxoQp3xv7ty5mzVrFnjNzTffHPjRzGOex5pZF6KCAAR8SkAjPI35ypcvr9eKn3/+ud5WOiSWofPVq0o1Ym8EpuMsWX4dg2keUOiNG9gCemlgUQgJAhDwIwG9utMzyerVq2fPnl3LPLQy0vDnk9Zmlnp+a1dLyzF1bC8asc974wC99EYdyQICEHAxAU2radGihfab1KQerXocO3as1laan8+NN96oIAMNCqwtpgP30TQ/i7RHiF6mnRVXQgACEAgzgY8//liTXRs3bqxZMAcOHNCkm8KFC4e5D8ea02wdtR3oPGBtlnnrrbc61mc0G0Yvo0mfviEAAd8S0E6Tmm6jian67/79+2WUY00udREQzaHVy8tAB1olovgbNGjgoizSHirzY9POiishAAEIhEpA3m9z5swZPHiwhmVPP/30kiVLNFk01EajdH+5cuU0MpZzgkzsrFk/mqCkRZz3339/lCJytlvGl87ypXUIQAACFgHt4yGHOXnZyGf18ccf1+JFedm4VyytpF555RXN412xYoU+yutHB/Hx8daqEu/VPcZkc1vv4SYjCEDAhwT+85//aPtlrafMli2bxLJdu3Yp75DlLkRz584dMGBA586dtZumDBBkReSu+NMeLXqZdlZcCQEIQCB9BLRCUXtDyqNH7yYlKm3atAmL42v6gnD+anmmazGM1oymYJ7nfBSO94BeOo6YDiAAAR8S0FPKCRMmjBo1St5yAwcO1HIRH0LwWMrM9/FYQUkHAhCIMgG5wUkmtYZSS0SmTZsWRm/0KCfm++6Z7+P7nwAAIACBMBHQlFdt4KwBpQzHFy1aFN6NRMIUI81knAB6mXF23AkBCEDAIiB79CeeeCI2NlYLEGWPvmDBgrp16wLHYwTQS48VlHQgAIGIEnCRPXpEuXixM/TSi1UlJwhAwHkClj16tWrV1JUr7NGdR+LxHtBLjxeY9CAAgbATsOzR5Z4qr9edO3dqxYgr7NHDzsFvDaKXfqs4+UIAAhknEGiPvm/fPk2CLV68eMab405XEWA9iavKRbAQgECUCMgeXU5v33777ZNPPqk9nPPlyxelQOg2agTQy6ihp2MIQMB8ArJH18oQKaU223K7Pbr5tA2PEL00vECEBwEIRIeA7NFnzpw5ZMiQc+fOyRi9e/fuXrURjw5fF/aKXrqwaIQMAQg4ScC2R1cn/fr169SpU9asWZ3skLbdQQC9dEediBICEIgAgUB7dI0sW7du7aWNRCIA0NtdoJferi/ZQQACaSIQaI+uWa/Yo6eJms8uQi99VnDShQAEriaAPfrVPPiULAHWXyaLhi8gAAFvE7Dt0T/77DPs0b1d67Bkh16GBSONQAACbiJg2aPfdNNNO3bs+PDDD5cvX449upvqF6VY0csogadbCEAgGgQC7dE1rNRGIjVq1IhGIPTpPgLopftqRsQQgEAGCCS1R69SpUoG2uEW3xJAL31behKHgF8IYI/ul0o7nCd66TBgmocABKJHwLJHb9CgQfny5bFHj14dPNIzeumRQpIGBCAQSED26PXr14+Li9OuW7J+HTlypPbeCryAYwiklwDrL9NLjOshAAFzCSSyR1+4cCEbiZhbLbdFhl66rWLECwEIBCOAPXowKpwLJwH0Mpw0aQsCEIg8AezRI8/cnz3GXLlyxZ+ZkzUEIOB2ArY9eu7cufv379+uXTvs0d1eU5PjZ3xpcnWIDQIQCE7AtkfXLB7N5WnTpk2mTMxeDM6Ks+EigF6GiyTtQAACkSCAPXokKNNHMAL8iywYFc5BAALmEcAe3bya+Csi9NJf9SZbCLiRAPbobqya92JGL71XUzKCgHcI7N27t3v37uXKldPgEnt079TVnZmgl+6sG1FDwOsEZI/+6KOPVq5cWYl++eWXCQkJ2KN7veam54deml4h4oOA3wjY9uiy5tH+lBMnTqxQoYLfIJCvgQTQSwOLQkgQ8CkB7NF9WniXpI1euqRQhAkBTxPAHt3T5fVIcqy/9EghSQMCbiRg26Pv3r37ySefxB7djUX0T8zopX9qTaYQMIhAInv0Ll26yNPOoPgIBQJJCKCXSZBwAgIQcJIA9uhO0qVtBwngt+4gXJqGAAQCCWCPHkiDY9cRYHzpupIRMATcR+DcuXOvv/76qFGjsEd3X/GI+HcC6OXvJPhfCEDAAQKyR3/ttdfGjBlTpkyZ8ePHt2jRwoFOaBICkSDAepJIUKYPCPiQgG2P/tFHH82dO/fTTz9FLH34M/BSyuill6pJLhAwgkBSe/Q777zTiMgIAgIhEEAvQ4DHrRCAwNUEsEe/mgefPEUAvfRUOUkmigTWrl27YMECBfDtt9++9NJLo0ePPnHiRBTjiXDXlj16xYoVNQkWe/QIw6e7yBBALyPDmV68TODdd9+tXbu2HjmuWrVq9erVNWrU+Otf//rUU09VqlRp27ZtXs78t9wse3RlnSNHDuU7ffp07NE9X3R/Johe+rPuZB1OAjlz5jx79qxavHjx4j//+c/Dhw/v27cvNjb22LFj7dq1C2dPhrW1fPnyJk2aNGjQoHz58jK000YipUuXNixGwoFA2Aigl2FDSUO+JXDPPfc8+OCDSn/JkiVDhgzRLlQlS5bUgc58/vnn2nPDe2TmzJlz2223/fGPf6xVq9aBAwdGjhxZvHhx76VJRhAIJIBeBtLgGAIZJJAtWzbdKQkpVKiQ1URcXFyWLL+ub/7ggw8y2Kh5t8n0dfbs2dWqVfvTn/708MMPSykHDRpUoEAB8yIlIgiEnwB+BeFnSou+JRATE2PnnitXLj2c3LlzpxZX2Cfde2Cbvuqgb9++3bt319tK96ZD5BDIAAH0MgPQuAUCaSKgsab0UgKTpqtNvSjQ9PXFF1/UM9isWbOaGixxQcBBAuilg3Bp2ucErOexBQsWdCkHTF9dWjjCdogAeukQWJqFwDU///yzKNxyyy2uY/HTTz+9+uqrWkKK6avrakfAzhFAL51jS8u+I3Dq1KnAnLWwRB/r168feNLwY5m+SinHjh1btWrVmTNnNm3a1PCACQ8CESPA/NiIoaYj7xPQ20o7SYnloUOHGjZsqCGafdLkA9v0dfPmzYsWLZJdEWJpcr2ILfIE0MvIM6dHzxLQ+oqFCxda6b3xxhtaZDJs2DDzs01k+qoU6tata37YRAiBCBPgeWyEgdOdlwnI6UYCOX/+fM2J1X+nTZtWs2ZNkxPevn27FlBqSaX8FmT6io+dycUitqgTQC+jXgIC8A4BTYWV9mzYsEEzS/UWMG/evMbmJnt0mcIvXry4c+fOMn3Fx87YShGYOQTQS3NqQSReIJApU6bbb7/d5Ezkzzd8+HBZw/fq1WvPnj2FCxc2OVpig4A5BHh/aU4tiAQCzhKQPbom68qoT3NfLdNXxNJZ4rTuLQKML71VT7KJEgF7f5Io9Z9Kt9qYMz4+XluI9OnTR9N55Aifyg18DQEIJCEQc+XKlSQnOQEBCKSDwA8//FCvXr0dO3ZIh9avX69tL9Nxs5OXXr58WRuJDB48+OTJkzJ97dKlS+7cuZ3skLYh4GUC6KWXq0tuESCgPS9feeUVKZPVlyzXGzVqpO2jI9B1Cl1ogu6sWbO0p9i///3vv/zlL5rUg+lrCrj4CgJpIYBepoUS10DANQQC7dH79++vDaszZ87smugJFAIGE+D9pcHFITQIpIcA9ujpocW1EEg3AfQy3ci4AQKmEbDt0W+++eapU6fiY2dagYjHGwTQS2/UkSx8SkATeUaNGiV79Fq1as2bNw8fO5/+Dkg7IgRYfxkRzHQCgXATkD36M888U7JkSdmjr1y5UmsrEctwM6Y9CFxFAL28CgcfIGA+Adseff/+/Vq+ovWUNWrUMD9sIoSA2wmgl26vIPH7iIDs0R999NHKlSsrZ9mjJyQkVKlSxUf5kyoEokoAvYwqfjqHQNoIyB69bdu21atXlyWCjBEmTpzIXiJpI8dVEAgbAfQybChpCAJOENi4cWOLFi3q1KlTqlQp2aNrak/x4sWd6Ig2IQCBlAmglynz4VsIRI3AmjVrmjRp0rhxY+zRo1YDOoZAAAHWkwTA4BACZhCw7NG1hcjTTz+tl5TYo5tRFqLwOwH00u+/API3h0Aie/Tu3bvnyJHDnPCIBAI+J4Be+vwHQPpGELh06dLMmTOxRzeiGAQBgWQIoJfJgOE0BCJCQBuJyMFu6NCh2bJlwx49IsjpBAIZJIBeZhAct0EgRAKyR588efKIESNuvPHGv//973FxcZkyMf8uRKjcDgEHCaCXDsKlaQgEJRBoj66VlNijB6XESQiYRgC9NK0ixONlAtije7m65OZ1Ajz/8XqFyc8MAkePHsUe3YxSEAUEMkgAvcwgOG6DQBoJaCORJ554okyZMpJM7NHTCI3LIGAgAfTSwKIQkkcIyB5daygrVap08eJFGcBOnz4de3SPlJY0fEkAvfRl2UnaYQK2PXr27Nm3bt2qST2lS5d2uE+ahwAEnCWAXjrLl9b9RgB7dL9VnHz9QwC99E+tydRZAh9//LHs0Zs1a1azZk1Zv44cObJw4cLOdknrEIBABAmwniSCsOnKowSWL18+aNCgnTt3yh79vffey507t0cTJS0I+JoAeunr8pN8KARkj75o0aL4+PjDhw/37dsXe/RQYHIvBMwngF6aXyMiNI4A9ujGlYSAIOA8gZgrV6443ws9QMAjBGx79Dx58gwYMKB169aZM2f2SG6kAQEIpEiA8WWKePgSAr8TuHDhgpaF2PboLVq0+P0b/hcCEPAFAfTSF2UmyVAIaCOR119/fdSoUeXKlcMePRSS3AsBVxNAL11dPoJ3loDs0aWUo0ePrl69ekJCQt26dZ3tj9YhAAGDCbD+0uDiEFr0CFj26DfddNPmzZuXLl2qFSOIZfSqQc8QMIIAemlEGQjCHAKB9ugbNmzQsLJGjRrmhEckEIBAtAigl9EiT7/GEdi7d28ie/QKFSoYFyUBQQACUSKAXkYJPN2aRED26I8++qg2D8Ee3aSyEAsEzCKAXppVD6KJMAHLHr1evXqlSpXavXv32LFjixcvHuEY6A4CEHAFAfTSFWUiyPATCLRH379/vwxgsUcPP2VahICHCLCexEPFJJW0EcAePW2cuAoCELiKAHp5FQ4+eJvAggULZI9+/Pjxv/zlLx06dMiRI4e38yU7CEAgjATQyzDCpClDCcgefe7cuYMHD7548WL//v3btWuH6auhpSIsCBhMAL00uDiEFjKBRPbobdq0yZSJd/YhY6UBCPiSAHrpy7L7IGns0X1QZFKEQEQJoJcRxU1nESBg26NrPeX06dPvvPPOCHRKFxCAgOcJoJeeL7GPEvzpp59effVV2aPXqVNn4cKF+Nj5qPakCgHnCaCXzjOmB+cJyB5dSqm9RBo1arR69WqNLJ3vkx4gAAF/EWDug7/q7b1sbXt0eQ6sX79e9uiIpfeqTEYQMIEAemlCFYghIwQse/TKlSvrZhnA6lUl9ugZ4cg9EIBA2gigl2njxFUmEdi+fbvs0atVq5YvX74dO3bI9LV06dImBUgsEICABwmglx4sqodT0jiybdu2ms4je3SNL0eOHInpq4fLTWoQMIoAemlUOQgmWQKyR2/RokXDhg2rVq0qpZQ9eoECBZK9mi8gAAEIhJsA82PDTZT2wk3Askfft29f3759Z82alTt37nD3QHsQgAAEUieAXqbOiCuiRSDQHr1z585Zs2aNViT0CwEIQAC95DdgHIHLly/PmTMHe3TjCkNAEPA3AfTS3/U3LHttJDJz5swhQ4Zkz559wIAB2KMbVh/CgYCvCaCXvi6/OcnLHl0LKIcOHVqsWDEZ2jVt2tSc2IgEAhCAgAigl/wMokwg0B592rRpdevWjXJAdA8BCEAgGAH0MhgVzkWEAPboEcFMJxCAQHgIoJfh4Ugr6SJw8uTJUaNGYY+eLmhcDAEIRJcAfgXR5e+73rWRyDPPPFO2bFkdYI/uu/KTMATcTAC9dHP1XBW7THmeeOKJihUramrPli1bJk6ciD26qwpIsBDwOwH00u+/gAjkb9uj58iRY9u2bbJHL168eAT6pQsIQAACYSSAXoYRJk0lJoA9emIifIYABFxLAL10benMDnzjxo2yR2/SpEmtWrWwRze7VkQHAQikiQDzY9OEiYvSTmDNmjXx8fF67ip79NmzZ+sZbNrv5UoIQAACxhJAL40tjfsCwx7dfTUjYghAIM0E0Ms0o+LCZAhgj54MGE5DAAKeIhBz5coVTyVEMhEkYNuj582bd+DAgXFxcZky8UY8ggWgKwhAIIIEGF9GELaHuvrPf/4zdepU7NE9VFJSgQAEUiGAXqYCiK8TEZA9+uTJk0eMGCHnAezRE8HhIwQg4GEC6KWHixvm1ALt0d99990aNWqEuQOagwAEIGAwAd42GVwcY0KTPfpzzz0XGxsrp57Vq1cvXLgQsTSmOAQCAQhEiAB6GSHQLu0m0B5dFgTa0rlKlSouzYWwIQABCIRCAL0MhZ6X7/3+++8T2aOXLl3aywmTGwQgAIEUCaCXKeLx5Zd66Nq9e/eqVatij+7L+pM0BCAQnAB6GZyLP89a9uj16tUrWbLkrl27Ro4cWbhwYX+iIGsIQAACiQigl4mA+PSj3k3ed999tj36888/X6BAAZ+yIG0IQAACwQiwniQYFT+d+/jjj1966SXLHj0hIQF7dD8Vn1whAIF0EEAv0wHLY5cuW7ZMG4kcPHiwX79+nTp1ypo1q8cSJB0IQAACYSSAXoYRpjuasu3RFe6AAQNat26dOXNmd4ROlBCAAASiRwC/9eixj3jPiezRtZ9zxEOgQwhAAAJuJcD40q2VS1fcskefMmXKsGHDihUrNmbMGM3rSdftXAwBCEAAAuilx38D2KN7vMCkBwEIRIoAehkp0hHvR/bo//jHPzSa/MMf/oA9esTx0yEEIOA1Auil1yqqfGSPPmrUqNdff71Ro0ayR8fx1YM1JiUIQCDiBPAriDhyJzsMtEdfv3691lMilk7ypm0IQMBHBNBLjxR77969iezRK1So4JHcSAMCEICAAQTQSwOKEFoIskd/9NFHq1Wrhj16aCC5GwIQgEBKBNDLlOgY/p1lj16nTp1SpUppfIk9uuH1IjwIQMDVBNBLV5bPskdv2LDhrbfeKqUcNGgQ9uiuLCRBQwAC7iHA/Fj31Oq3SNesWSPTV8se/e23386dO7fLEiBcCEAAAu4kgF66pm7z588fPHjw8ePHsUd3Tc0IFAIQ8BAB9NL0Ytr26BcvXuzfv3+7du2wRze9ZsQHAQh4kQB6aW5VZfo6a9asIUOGZM+eXRuJtGnTJlMm3jebWy8igwAEvE0AvTSxvhcuXJg4ceKIESNuvPFGmaSzkYiJRSImCEDAZwTQS7MKLnt0+djJzU6+PNOnT7/zzjvNio9oIAABCPiVAHppSuUD7dEXLlxYo0YNUyIjDghAAAIQuOYa9DL6vwKZvr766qvYo0e/EkQAAQhAIHkC0Z8/cunSpYMHD2rR/fnz5+04r1y5IhWxP3r14Pvvv5fpa5kyZfbv3489ulerTF4QgIA3CERTL3/44YfHHnusUKFCxYsXj42NzZMnT4MGDSZMmHDq1Km33nrrxRdf9AbioFno3wfdu3evVKmSVonI1k6vKrFHDwqKkxCAAAQMIRA1vdyzZ0/NmjXHjRunF3Xvvffepk2b5FYjyezZs2f+/Pk7depkCKCwh2Hbo+fLl2/r1q2aB1u6dOmw90KDEIAABCAQXgLReX+px60PPfTQgQMHHnnkkZkzZ1opVa9eXUsMtWVjhw4dtKAivHma0JpMX7U45IMPPujdu7fGlzi+mlAUYoAABCCQRgLRGV8uX75c4qEQX3jhhUSBtm3bVoPORCfd/vHjjz9u0qRJs2bNsEd3eymJHwIQ8C2B6OjlypUrLeIlSpRIir5jx47aoyrpeTeeWbZsWf369fWPgLvvvluTep577jk9hnVjIsQMAQhAwOcEoqOXhw4dsrhrn42gBdA8oKDn3XJSpq+yR7/99ts1qUdiqaevffv2ZS8Rt5SPOCEAAQgkJRAdvdS8HiuUMWPGJI1JZ2677bag580/qeUxmtxbuXLlp59+ulu3brt37/7Tn/6UI0cO8yMnQghAAAIQSIFAdOb73HLLLVZMkpZ69epJVxKFWLZsWW2GnOik4R9ljz5lyhTN6NG/Bv72t7+1bt2ajUQMLxnhQQACEEg7gRhNVU371eG68tixY6VKlbIMCmJiYoYPH/7MM8+Eq/HItxNojz5w4EDs0SNfAnqEAAQg4DSB6DyPvf766+Pj463cJNh6txcXF3fkyBGnsw17+zJ91S4iWkCpZTCTJk369NNPEcuwQ6ZBCEAAAiYQiI5eKvOnnnoqcFLP+++/r3d+c+bMMQFKWmI4efKkJrtqlLxixQqJ5dq1a7ViJC03cg0EIAABCLiRQNT0UrBee+01Pb3U81gLnBRIU0m7du0aaCRrIFMZ2+rpccmSJbds2aKFMVpLWrduXQPjJCQIQAACEAgjgWjqpZRy0KBBCxYsKFiwoJ3S5MmTtfjSXnBinzfhwLZHl2TKHl2Rs+uWCXUhBghAAAIRIBBNvbTS05tLDdS0nN/OdvPmzVrjf+LECftM1A9k+prIHl37OUc9KgKAAAQgAIGIEYi+XirVokWLygdHKzHsBRhattijR4+IUUihI20eoqfE8rbNnj079ugpgOIrCEAAAt4mYIReCrGezT777LOLFy/OmTOnRVyblmhUF0X6cri977779HBYk3q0m8rYsWO171gU46FrCEAAAhCIIoHo6OW6deu0BDNp2ppiOnXqVOu81pnMmDEj6TUROLNmzRpF0rhxY9mjaxOVkSNHFi5cOAL90gUEIAABCBhLIDp6qTmln332WVAoDz744B133GF9pWehQa9x7qRl+vrwww9b9uiajsSuW87RpmUIQAACLiIQHb0UoK+//jo5TM2bN7e+sl9nBr1STq3abFk7aPbv3//HH38Mek0aT8oeffbs2dWqVZPXa/v27S17dDYSSSM9LoMABCDgBwJR08vp06cnx7dQoULWV7Gxscld88svv9x7770agMpVR36tGpKePXs2uYtTPi+PHr2YlMdQz5499fQVe/SUcfEtBCAAAX8SiJpefvPNN7LFCQpdk2us87IsD3qBTupJ6UcffTR06NBcuXJpfHnmzJl+/fold3HK5zNlyqSdtqSau3btiu4Mo5Tj5FsIQAACEIgigajppXLWisYvvvgiUfLSLW1aopOacVO7du1E31ofpY7aCEzfSix1RnNrtZnJm2++eerUqaDXp3xSw9OdO3fKqefnn3+uWbPmXXfdJSHXZiMp38W3EIAABCDgKwLR1EtJo56janMS++2jXhzqKevhw4e1n1cKk2NXrVolaaxUqZJdKnnPapMQLUGxz6T3QE49b7zxxsGDB7XaUoNX2d09//zz3333XXrb4XoIQAACEPAkgajppZY2St40xNT+HjfccIMEskKFCmXKlNEWHx06dNDaR+1hkhxxmZvrq2LFitkXWCsj5VFnn8nYgcaacoGXwZCc3yXeFStWbNmy5dKlS6Oy61nGUuAuCEAAAhBwgkB09ovWM08ppQSvVatWWt2o8aJeHJ47d06jukaNGhUpUiTlVKVkuiB//vz2ZdaqD/nq2WdCPNDAV3/Hjx+Xn+3jjz+u1jQbqEuXLvZcpBDb53YIQAACEHAXgejsFx0iI72t/PDDD+Vs0LFjR6up1atXS4PLlSu3Y8eOEBtPersGl7Lr09NaveO8//77NQCVlCa9jDMQgAAEIOBhAlF7HhsKU72q1O32RmA6zpLl14Gy5gGF0mxy96qjZs2aycpg27Zt2hq6TZs28v2RfDrUXXJhcB4CEIAABKJIwJV6ed111wmZnt/a4LQcU8fXXnutfcaJgxIlSrz88stao6mdojWH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" alt="Modèle binomial à une période" width="40%" />
+<p class="caption">
+Modèle binomial à une période
+</p>
+</div>
+</div>
+<div id="définition-dun-portefeuille-et-du-processus-de-richesse-associé" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Définition d’un
+portefeuille et du processus de richesse associé</h2>
+<div class="definition-box">
+<div class="definition-title">
+Portefeuille
+</div>
+<div class="definition-item">
+Un portefeuille est un couple <span class="math inline">\((x, \pi) \in
+\mathbb{R}^+ \times \mathbb{R}\)</span> où :
+<ul>
+<li>
+<span class="math inline">\(x\)</span> représente le capital initial de
+l’agent à <span class="math inline">\(t=0\)</span>
+</li>
+<li>
+<span class="math inline">\(\pi\)</span> désigne le nombre d’actions
+risquées <span class="math inline">\(S\)</span> qu’elle décide de
+détenir
+</li>
 </ul>
 </div>
-<div id="chapitre-4-le-toy-model-modèle-binomial-à-une-période" class="section level3" number="4">
-<h3><span class="header-section-number">4</span> Chapitre 4 : Le “Toy
-Model” (Modèle Binomial à une période)</h3>
-<p>On considère un marché avec un bon sans risque <span class="math inline">\(S^0_t = (1+r)^t\)</span> et un actif risqué <span class="math inline">\(S_t\)</span> évoluant sur un seul pas de
-temps.</p>
+</div>
+<div class="definition-box">
+<div class="definition-title">
+Processus de Richesse
+</div>
+<div class="definition-item">
+<p>Pour un portefeuille <span class="math inline">\((x, \pi)\)</span>,
+le processus de richesse est défini par : <span class="math display">\[
+\begin{cases}
+X_0^{(x,\pi)} = x &amp; \text{(richesse initiale à } t=0\text{)} \\[8pt]
+X_1^{(x,\pi)} = \pi S_1 + (x - \pi S_0)(1+r) &amp; \text{(richesse
+finale à } t=1\text{)}
+\end{cases}
+\]</span></p>
+</div>
+</div>
+<p><strong>À <span class="math inline">\(t=0\)</span></strong> :</p>
 <ul>
-<li><strong>Condition d’AAO</strong> : Une opportunité d’arbitrage est
-présente si et seulement si : <span class="math display">\[d &lt; 1+r
-&lt; u\]</span></li>
+<li>L’investisseur commence avec <span class="math inline">\(x€\)</span></li>
+<li>Elle achète <span class="math inline">\(\pi\)</span> actions <span class="math inline">\(S\)</span> au prix <span class="math inline">\(S_0\)</span></li>
+<li>Le solde non investi : <span class="math inline">\(x - \pi
+S_0\)</span></li>
 </ul>
-<div id="preuve" class="section level4" number="4.1">
-<h4><span class="header-section-number">4.1</span> Preuve</h4>
-<div id="condition-nécessaire" class="section level5" number="4.1.1">
-<h5><span class="header-section-number">4.1.1</span> 1. Condition
-Nécessaire</h5>
+<p><strong>À <span class="math inline">\(t=1\)</span></strong> :</p>
+<ul>
+<li>La composante risquée vaut : <span class="math inline">\(\pi
+S_1\)</span> (valeur aléatoire des actions)</li>
+<li>La composante sans risque vaut : <span class="math inline">\((x -
+\pi S_0)(1+r)\)</span> (capital placé à taux <span class="math inline">\(r\)</span> avec intérêts)</li>
+</ul>
+<p>On note que dans cette définition le portefeuille est
+<strong>autofinancé</strong> :</p>
+<ul>
+<li>Tout capital non investi dans l’actif risqué <span class="math inline">\(S\)</span> est <strong>automatiquement
+placé</strong> dans l’actif sans risque <span class="math inline">\(S^0\)</span></li>
+<li>Les seuls flux proviennent des rendements de <span class="math inline">\(S\)</span> et <span class="math inline">\(S^0\)</span></li>
+</ul>
+</div>
+<div id="prix-et-richesse-actualisés" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Prix et Richesse
+Actualisés</h2>
+<p>Comme démontré dans la section sur l’actualisation, la <strong>valeur
+temporelle de l’argent</strong> est fondamentale en finance. Dans le
+modèle binomial, nous choisissons l’actif sans risque <span class="math inline">\(S^0\)</span> comme <strong>numéraire</strong> de
+référence pour actualiser.</p>
+<div class="definition-box">
+<div class="definition-title">
+Prix Actualisé
+</div>
+<div class="definition-item">
+<p>Le processus de prix actualisé de l’actif risqué <span class="math inline">\(S\)</span> est défini par : <span class="math display">\[
+\begin{cases}
+\widetilde{S}_0 = S_0 &amp; \text{(prix actuel non actualisé)} \\[8pt]
+\widetilde{S}_1 = \dfrac{S_1}{1+r} &amp; \text{(prix futur actualisé)}
+\end{cases}
+\]</span></p>
+</div>
+</div>
+<div class="definition-box">
+<div class="definition-title">
+Richesse Actualisée
+</div>
+<div class="definition-item">
+<p>La richesse actualisée d’un portefeuille <span class="math inline">\((x, \pi)\)</span> est définie par : <span class="math display">\[
+\widetilde{X}_t^{(x,\pi)} = \dfrac{X_t^{(x,\pi)}}{(1+r)^t}, \quad t =
+0,1
+\]</span></p>
+</div>
+</div>
+<p>Un calcul direct donne une autre expression de la richesse
+actualisée:</p>
+<div style="margin-left: 30px; padding-left: 15px; border-left: 2px solid #666; color: #444; font-style: italic;">
+<p><span class="math display">\[
+\begin{aligned}
+\widetilde{X}_1^{(x,\pi)} &amp;= \frac{X_1^{(x,\pi)}}{1+r} \\
+&amp;= \frac{\pi S_1 + (x - \pi S_0)(1+r)}{1+r} \\
+&amp;= \pi \frac{S_1}{1+r} + (x - \pi S_0) \\
+&amp;= \pi \widetilde{S}_1 + (x - \pi S_0) \\
+&amp;= x + \pi(\widetilde{S}_1 - \widetilde{S}_0)
+\end{aligned}
+\]</span></p>
+</div>
+<p><strong>Formule finale</strong> : <span class="math display">\[
+\widetilde{X}_1^{(x,\pi)} = x + \pi(\widetilde{S}_1 - \widetilde{S}_0)
+\]</span></p>
+</div>
+<div id="notion-darbitrage" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Notion
+d’arbitrage</h2>
+<p>Rappelons la définition : Une opportunité d’arbitrage (AO) est un
+portefeuille de la forme <span class="math inline">\((0, \pi)\)</span>
+tel que :</p>
+<ul>
+<li><p>Capital initial nul : <span class="math inline">\(x = 0\)</span>
+: La stratégie ne nécessite aucun investissement personnel au
+départ</p></li>
+<li><p><span class="math inline">\(\mathbb{P}[X_1^{(0,\pi)} \geq 0] =
+1\)</span> : Il n’y a aucun risque de perte.</p></li>
+<li><p><span class="math inline">\(\mathbb{P}[X_1^{(0,\pi)} &gt; 0] &gt;
+0\)</span> : la stratégie génère un profit strictement positif.
+Autrement dit, elle offre une chance réelle de gagner de
+l’argent.</p></li>
+</ul>
+<p>Notons que : La stratégie triviale <span class="math inline">\((0,
+0)\)</span> n’est pas une opportunité d’aribtrage</p>
+<p>Nous pouvons à présent définir l’<strong>Hypothèse d’Absence
+d’Opportunité d’Arbitrage (AA0)</strong> :</p>
+<div class="definition-box">
+<div class="definition-title">
+Marché Sans Arbitrage (AAO)
+</div>
+<div class="definition-item">
+<p>Un marché financier est <strong>sans arbitrage</strong> si, pour
+toute stratégie d’investissement autofinancée <strong>avec capital
+initial nul</strong> (<span class="math inline">\(X_0 = 0\)</span>), on
+a la propriété suivante :</p>
+<p><strong>Si</strong> la stratégie ne présente <strong>aucun risque de
+perte</strong> : <span class="math display">\[\mathbb{P}[X_T \ge 0] =
+1\]</span></p>
+<p><strong>Alors</strong> cette stratégie ne peut <strong>pas générer de
+profit</strong> non plus : <span class="math display">\[\mathbb{P}[X_T =
+0] = 1\]</span></p>
+<p>En d’autres termes : <strong>Une stratégie sans risque et sans
+capital initial ne peut pas être rentable.</strong></p>
+</div>
+</div>
+<div id="quelles-conditions-sur-les-paramètres-garantissent-laao" class="section level3" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Quelles conditions
+sur les paramètres garantissent l’AAO ?</h3>
+<div class="theorem-box">
+<div class="theorem-title">
+Équivalence Fondamentale et Pricing
+</div>
+<div class="theorem-item">
+<p>Les trois assertions suivantes sont <strong>équivalentes</strong>
+:</p>
+</div>
+<div class="theorem-item">
+<p><strong>(i) Absence d’arbitrage</strong> <br>Le marché est sans
+opportunité d’arbitrage.</p>
+</div>
+<div class="theorem-item">
+<p><strong>(ii) Existence d’une mesure martingale équivalente</strong>
+<br>Il existe une unique mesure de probabilité <span class="math inline">\(\mathbb{P}^*\)</span> équivalente à <span class="math inline">\(\mathbb{P}\)</span> telle que : <span class="math display">\[ \mathbb{E}^{\mathbb{P}^*} \left[ \frac{S_1}{1+r}
+\right] = S_0 \]</span> c’est-à-dire que le prix actualisé <span class="math inline">\(\widetilde{S}_t = S_t/(1+r)^t\)</span> est une
+martingale sous <span class="math inline">\(\mathbb{P}^*\)</span>.</p>
+</div>
+<div class="theorem-item">
+<p><strong>(iii) Condition sur les paramètres</strong> <br>Les
+paramètres satisfont la double inégalité : <span class="math display">\[
+d &lt; 1 + r &lt; u \]</span></p>
+</div>
+</div>
+<p><strong>Preuve (i) ⇔ (iii)</strong>.</p>
+<div style="margin-left: 30px; padding-left: 15px; border-left: 2px solid #666; color: #444; font-style: italic;">
+<ol style="list-style-type: decimal">
+<li>Condition Nécessaire</li>
+</ol>
 <p>Supposons que la relation <span class="math inline">\(d &lt; 1+r &lt;
-u\)</span> ne soit pas satisfaite. Cela signifie que soit <span class="math inline">\(d \ge 1+r\)</span>, soit <span class="math inline">\(1+r \ge u\)</span>. <br></p>
-<p><strong>Cas <span class="math inline">\(1+r \ge u\)</span></strong> :
-La valeur maximale de l’actif risqué est inférieure ou égale au
-rendement du bon sans risque. Considérons la stratégie <span class="math inline">\(x=0\)</span> et <span class="math inline">\(\pi=-1\)</span> (vente à découvert). <br></p>
-<ul>
-<li><p>La richesse terminale est : <span class="math inline">\(X_1^{(0,\pi)} = S_0(1+r-C) \ge S_0(1+r-u) \ge
-0\)</span>.<br />
-<br></p></li>
-<li><p>Si <span class="math inline">\(1+r &gt; u\)</span>, alors <span class="math inline">\(\mathbb{P}[X_1^{(0,\pi)} &gt; 0] =
-\mathbb{P}[1+r-C &gt; 0] \ge \mathbb{P}[C=u] = p &gt; 0\)</span>.<br />
-</p></li>
-<li><p>Si <span class="math inline">\(1+r = u\)</span>, alors <span class="math inline">\(\mathbb{P}[X_1^{(0,\pi)} &gt; 0] =
-\mathbb{P}[1+r-C &gt; 0] \ge \mathbb{P}[C=d] = 1-p &gt;
-0\)</span>.<br />
-<br></p></li>
-<li><p>Dans les deux cas, <span class="math inline">\((0, \pi)\)</span>
-est une AO (Opportunité d’Arbitrage).</p></li>
-</ul>
+u\)</span> ne soit pas satisfaite. Cela signifie que soit <span class="math inline">\(d \ge 1+r\)</span>, soit <span class="math inline">\(1+r \ge u\)</span>.</p>
+<p>Cas <span class="math inline">\(1+r \ge u\)</span> : La valeur
+maximale de l’actif risqué est inférieure ou égale au rendement du bon
+sans risque.</p>
+<p>Considérons la stratégie <span class="math inline">\((x=0,
+\pi=-1)\)</span> (vente à découvert).</p>
+<p>La richesse terminale est : <span class="math inline">\(X_1^{(0,\pi)}
+= S_0(1+r-C) \ge S_0(1+r-u) \ge 0\)</span></p>
+<p>Si <span class="math inline">\(1+r &gt; u\)</span>, alors <span class="math inline">\(\mathbb{P}[X_1^{(0,\pi)} &gt; 0] =
+\mathbb{P}[1+r-C &gt; 0] \ge \mathbb{P}[C=u] = p &gt; 0\)</span></p>
+<p>Si <span class="math inline">\(1+r = u\)</span>, alors <span class="math inline">\(\mathbb{P}[X_1^{(0,\pi)} &gt; 0] =
+\mathbb{P}[1+r-C &gt; 0] \ge \mathbb{P}[C=d] = 1-p &gt; 0\)</span></p>
+<p>Cas <span class="math inline">\(1+r \le d\)</span> : Le rendement
+sans risque est inférieur au pire scénario de l’actif risqué.</p>
+<p>On choisit <span class="math inline">\((x=0, \pi=1)\)</span>.</p>
+<p>Si <span class="math inline">\(1+r &lt; d\)</span>, alors <span class="math inline">\(\mathbb{P}[X_1^{(0,1)} &gt; 0] =
+\mathbb{P}[C-(1+r) &gt; 0] \ge \mathbb{P}[C=d] = 1-p &gt; 0\)</span></p>
+<p>Si <span class="math inline">\(1+r = d\)</span>, alors <span class="math inline">\(\mathbb{P}[X_1^{(0,1)} &gt; 0] =
+\mathbb{P}[C-(1+r) &gt; 0] \ge \mathbb{P}[C=u] = p &gt; 0\)</span></p>
+<p>Conclusion : Dans les deux cas, <span class="math inline">\((0,
+\pi)\)</span> est une opportunité d’arbitrage (AO). La condition <span class="math inline">\(d &lt; 1+r &lt; u\)</span> est donc nécessaire
+pour éviter l’arbitrage.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Condition Suffisante</li>
+</ol>
+<p>Supposons maintenant que <span class="math inline">\(d &lt; 1+r &lt;
+u\)</span> soit vérifiée et qu’il existe une AO <span class="math inline">\((0, \pi)\)</span>.</p>
+<p>La richesse est donnée par <span class="math inline">\(X_1^{(x,\pi)}
+= S_0\pi(C-(1+r))\)</span>.</p>
+<p>Si <span class="math inline">\(\pi &gt; 0\)</span> : Puisque <span class="math inline">\(\mathbb{P}[X_1^{(x,\pi)} \ge 0] = 1\)</span>, il
+faudrait que <span class="math inline">\(\mathbb{P}[C-(1+r) \ge 0] =
+1\)</span>, ce qui contredit <span class="math inline">\(1+r &lt;
+u\)</span>.</p>
+<p>Si <span class="math inline">\(\pi &lt; 0\)</span> : Un argument
+similaire montre que cela contredit <span class="math inline">\(d &lt;
+1+r\)</span>.</p>
+<p>Si <span class="math inline">\(\pi = 0\)</span> : Le portefeuille
+<span class="math inline">\((0,0)\)</span> n’est pas une AO.</p>
+<p>Conclusion : Aucune AO n’existe sous la condition <span class="math inline">\(d &lt; 1+r &lt; u\)</span>, qui est donc
+suffisante.</p>
 </div>
-<div id="condition-suffisante" class="section level5" number="4.1.2">
-<h5><span class="header-section-number">4.1.2</span> 2. Condition
-Suffisante</h5>
-<p>Supposons que <span class="math inline">\(d &lt; 1+r &lt; u\)</span>
-soit vérifiée et qu’il existe une AO <span class="math inline">\((0,
-\pi)\)</span>.La richesse est donnée par <span class="math inline">\(X_1^{(x,\pi)} = S_0\pi(C-(1+r))\)</span>.</p>
-<p><em>Si <span class="math inline">\(\pi &gt; 0\)</span> : Puisque
-<span class="math inline">\(\mathbb{P}[X_1^{(x,\pi)} \ge 0] =
-1\)</span>, il faudrait que <span class="math inline">\(\mathbb{P}[C-(1+r) \ge 0] = 1\)</span>, ce qui
-contredit <span class="math inline">\(1+r &lt; u\)</span>. </em>Si <span class="math inline">\(\pi &lt; 0\)</span> : Un argument similaire montre
-que cela contredit <span class="math inline">\(d &lt; 1+r\)</span>. *Par
-conséquent, la seule possibilité est <span class="math inline">\(\pi =
-0\)</span>. Or, le portefeuille <span class="math inline">\((0,0)\)</span> n’est pas une AO.</p>
-<hr />
-</div>
-</div>
-<div id="interprétation-intuitive-de-la-condition-4.3.1" class="section level4" number="4.2">
-<h4><span class="header-section-number">4.2</span> Interprétation
-Intuitive de la Condition (4.3.1)</h4>
+<p><strong>Interprétation Intuitive de l’équivalence (i) ⇔ (iii)
+</strong></p>
 <p>La condition <span class="math inline">\(d &lt; 1+r &lt; u\)</span>
 signifie que l’actif risqué <span class="math inline">\(S\)</span> est
 effectivement plus risqué que l’actif sans risque <span class="math inline">\(S^0\)</span>, tout en offrant un rendement
 potentiel plus élevé:</p>
-<p><strong><span class="math inline">\(u &gt; 1+r\)</span></strong> : La
-valeur haute de l’actif risqué dépasse celle du bon, ce qui justifie la
-prise de risque pour l’investisseur. *<strong><span class="math inline">\(d &lt; 1+r\)</span></strong> : L’actif risqué peut
-prendre des valeurs inférieures à l’actif sans risque, ce qui définit la
-notion de risque (perte potentielle par rapport au placement sûr).</p>
 <ul>
-<li><strong>Mesure Martingale Équivalente (EMM) <span class="math inline">\(\mathbb{P}^*\)</span></strong> : L’existence d’une
-EMM est équivalente à l’AAO (1er Théorème Fondamental). <span class="math inline">\(\mathbb{P}^*\)</span> est une mesure sous laquelle
-les prix actualisés <span class="math inline">\(\tilde{S}_t = S_t /
-S^0_t\)</span> sont une martingale.</li>
-<li><strong>Probabilité Neutre au Risque (<span class="math inline">\(p^*\)</span>)</strong> : Dans ce modèle complet
-(l’EMM est unique), <span class="math inline">\(p^*\)</span> est donnée
-par : <span class="math display">\[p^{*} = \mathbb{P}^*[S_1=S_0 u] =
-\frac{(1+r)-d}{u-d}\]</span></li>
-<li><strong>Prix d’Arbitrage</strong> : Le prix <span class="math inline">\(\overline{x}\)</span> d’un payoff <span class="math inline">\(h\)</span> à l’instant <span class="math inline">\(T=1\)</span> est son espérance actualisée sous
-<span class="math inline">\(\mathbb{P}^*\)</span> : <span class="math display">\[\overline{x} = \frac{1}{1+r}
-\mathbb{E}^{\mathbb{P}^{*}}[h] = \frac{1}{1+r} \left( p^* h(S_0 u) +
-(1-p^*) h(S_0 d) \right)\]</span></li>
+<li><strong><span class="math inline">\(u &gt; 1+r\)</span></strong> :
+La valeur haute de l’actif risqué dépasse celle du bon, ce qui justifie
+la prise de risque pour l’investisseur.</li>
+<li><strong><span class="math inline">\(d &lt; 1+r\)</span></strong> :
+L’actif risqué peut prendre des valeurs inférieures à l’actif sans
+risque, ce qui définit la notion de risque (perte potentielle par
+rapport au placement sûr).</li>
 </ul>
+<strong>Preuve (i) ⇔ (ii)</strong>.
+<div style="margin-left: 30px; padding-left: 15px; border-left: 2px solid #666; color: #444; font-style: italic;">
+<p>Soit un produit dérivé dont le payoff à <span class="math inline">\(t=1\)</span> est <span class="math inline">\(h\)</span>. Dans notre modèle binomial, <span class="math inline">\(h\)</span> peut prendre deux valeurs : - <span class="math inline">\(h^+ = h(S_0 u)\)</span> : Payoff en cas de
+<strong>hausse</strong> - <span class="math inline">\(h^- = h(S_0
+d)\)</span> : Payoff en cas de <strong>baisse</strong></p>
+<p>Nous cherchons un portefeuille <span class="math inline">\((x,
+\pi)\)</span> qui <strong>réplique exactement</strong> ce payoff :</p>
+<p><span class="math display">\[ X_1^{(x,\pi)} = h \quad \text{dans les
+deux états du monde} \]</span></p>
+<p>Pour répliquer <span class="math inline">\(h\)</span> dans tous les
+états, nous devons avoir :</p>
+<p><strong>Système à résoudre :</strong></p>
+<p><span class="math display">\[
+\begin{cases}
+\pi S_0 u + (x - \pi S_0)(1+r) = h^+ &amp; \text{(équation H : état
+hausse)} \\[8pt]
+\pi S_0 d + (x - \pi S_0)(1+r) = h^- &amp; \text{(équation T : état
+baisse)}
+\end{cases}
+\]</span></p>
+<p>Soustrayons l’équation (T) de l’équation (H) pour éliminer <span class="math inline">\(x\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+[\pi S_0 u + (x - \pi S_0)(1+r)] - [\pi S_0 d + (x - \pi S_0)(1+r)]
+&amp;= h^+ - h^- \\
+\pi S_0 u - \pi S_0 d &amp;= h^+ - h^- \\
+\pi S_0 (u - d) &amp;= h^+ - h^- \\
+\end{aligned}
+\]</span></p>
+<p><strong>Solution unique pour <span class="math inline">\(\pi\)</span>
+:</strong> <span class="math display">\[ \boxed{\pi = \frac{h^+ -
+h^-}{S_0(u - d)}} \]</span></p>
+<p>Ce <span class="math inline">\(\pi\)</span> représente le
+<strong>nombre d’actions risquées</strong> nécessaires pour couvrir
+parfaitement le payoff <span class="math inline">\(h\)</span>.</p>
+<p>Résolvons maintenant pour <span class="math inline">\(x\)</span> à
+partir de l’équation (H).</p>
+<p><strong>Partons de l’équation (H) :</strong> <span class="math display">\[ \pi S_0 u + (x - \pi S_0)(1+r) = h^+
+\]</span></p>
+<p><strong>Isolons <span class="math inline">\(x\)</span> :</strong>
+<span class="math display">\[
+\begin{aligned}
+x - \pi S_0 &amp;= \frac{h^+ - \pi S_0 u}{1+r} \\
+x &amp;= \pi S_0 + \frac{h^+ - \pi S_0 u}{1+r}
+\end{aligned}
+\]</span></p>
+<p><strong>Substituons l’expression de <span class="math inline">\(\pi\)</span> :</strong> <span class="math display">\[
+\begin{aligned}
+x &amp;= \frac{h^+ - h^-}{u - d} + \frac{1}{1+r} \left[ h^+ - \frac{h^+
+- h^-}{u - d} u \right] \\
+&amp;= \frac{h^+ - h^-}{u - d} + \frac{1}{1+r} \left[ \frac{h^+(u - d) -
+u(h^+ - h^-)}{u - d} \right] \\
+&amp;= \frac{h^+ - h^-}{u - d} + \frac{1}{1+r} \left[ \frac{h^+ u - h^+
+d - h^+ u + u h^-}{u - d} \right] \\
+&amp;= \frac{h^+ - h^-}{u - d} + \frac{1}{1+r} \left[ \frac{u h^- - h^+
+d}{u - d} \right] \\
+&amp;= \frac{1}{1+r} \left[ \frac{(1+r)(h^+ - h^-) + u h^- - h^+ d}{u -
+d} \right] \\
+&amp;= \frac{1}{1+r} \left[ \frac{h^+[(1+r) - d] + h^-[u - (1+r)]}{u -
+d} \right] \\
+\end{aligned}
+\]</span></p>
+<p><strong>Forme finale :</strong> <span class="math display">\[
+\boxed{x = \frac{1}{1+r} \left[ h^+ \cdot \frac{(1+r) - d}{u - d} + h^-
+\cdot \frac{u - (1+r)}{u - d} \right] } \]</span></p>
+<p><strong>Définissons :</strong> <span class="math display">\[ p^* :=
+\frac{(1+r) - d}{u - d} \]</span></p>
+<p><strong>Sous la condition d’absence d’arbitrage <span class="math inline">\(d &lt; 1+r &lt; u\)</span>, on vérifie que
+:</strong></p>
+<ul>
+<li><span class="math inline">\(0 &lt; p^* &lt; 1\)</span></li>
+<li><span class="math inline">\(1 - p^* = \frac{u - (1+r)}{u -
+d}\)</span></li>
+</ul>
+<p><strong>La formule pour <span class="math inline">\(x\)</span>
+devient alors :</strong> <span class="math display">\[ \boxed{x =
+\frac{1}{1+r} \left[ p^* h^+ + (1-p^*) h^- \right] } \]</span></p>
+<p><strong>Ce qui s’écrit comme une espérance :</strong> <span class="math display">\[ x = \frac{1}{1+r} \mathbb{E}^{\mathbb{P}^*}[h]
+\]</span> où <span class="math inline">\(\mathbb{P}^*\)</span> est la
+<strong>mesure neutre au risque</strong> définie par <span class="math inline">\(\mathbb{P}^*(H) = p^*\)</span>.</p>
 </div>
-<div id="preuve-du-capital-initial-du-portefeuille-réplicant" class="section level4" number="4.3">
-<h4><span class="header-section-number">4.3</span> Preuve du capital
-initial du portefeuille réplicant</h4>
-<p>Pour répliquer un payoff <span class="math inline">\(h\)</span>, on
-cherche <span class="math inline">\((x, \pi)\)</span> tel que <span class="math inline">\(X_1 = h\)</span> dans tous les états du monde : 1.
-<span class="math inline">\(\pi S_0 u + (x - \pi S_0)(1+r) =
-h^+\)</span> (cas hausse) 2. <span class="math inline">\(\pi S_0 d + (x
-- \pi S_0)(1+r) = h^-\)</span> (cas baisse)</p>
-<p>En soustrayant (2) de (1) : <span class="math inline">\(\pi S_0 (u-d)
-= h^+ - h^- \implies \pi = \frac{h^+ - h^-}{S_0(u-d)}\)</span>. En
-isolant <span class="math inline">\(x\)</span> dans l’équation (1) :
-<span class="math display">\[x = \frac{1}{1+r} \left[ h^+ \left(
-\frac{1+r-d}{u-d} \right) + h^- \left( \frac{u-(1+r)}{u-d} \right)
-\right]\]</span> En posant <span class="math inline">\(p^* =
-\frac{1+r-d}{u-d}\)</span>, on obtient : <span class="math inline">\(x =
-\frac{1}{1+r} \mathbb{E}^{\mathbb{P}^*}[h]\)</span>.</p>
-<hr />
+<div class="definition-box">
+<div class="definition-title">
+Unicité du Prix
 </div>
-</div>
-<div id="chapitre-5-marchés-à-temps-discret-t-périodes" class="section level3" number="5">
-<h3><span class="header-section-number">5</span> Chapitre 5 : Marchés à
-temps discret (T périodes)</h3>
-<div id="preuve-existence-dune-emm-implies-aao" class="section level4" number="5.1">
-<h4><span class="header-section-number">5.1</span> Preuve : Existence
-d’une EMM <span class="math inline">\(\implies\)</span> AAO</h4>
-<p><strong>Assertion :</strong> S’il existe une mesure de martingale
-équivalente <span class="math inline">\(\mathbb{Q}\)</span>, alors le
-marché satisfait la condition d’AAO.</p>
-<ol style="list-style-type: decimal">
-<li>Soit <span class="math inline">\((X_t)_{t \in \{0,...,T\}}\)</span>
-le processus de richesse actualisée d’une stratégie d’arbitrage
-potentielle avec un capital initial <span class="math inline">\(x=0\)</span>.</li>
-<li>Par définition d’une stratégie de portefeuille, <span class="math inline">\(\tilde{X}_t\)</span> est une <span class="math inline">\(\mathbb{Q}\)</span>-martingale car : <span class="math display">\[\mathbb{E}^{\mathbb{Q}}[\tilde{X}_t |
-\mathcal{F}_{t-1}] = \tilde{X}_{t-1} + \pi_t
-\mathbb{E}^{\mathbb{Q}}[\tilde{S}_t - \tilde{S}_{t-1} |
-\mathcal{F}_{t-1}] = \tilde{X}_{t-1} + 0\]</span></li>
-<li>Par la propriété de martingale, <span class="math inline">\(\mathbb{E}^{\mathbb{Q}}[\tilde{X}_T] = \tilde{X}_0
-= 0\)</span>.</li>
-<li>Si c’était une AO, on aurait <span class="math inline">\(X_T \geq
-0\)</span> p.s. et <span class="math inline">\(\mathbb{P}(X_T &gt; 0)
-&gt; 0\)</span>. Par équivalence des mesures, on aurait aussi <span class="math inline">\(\mathbb{Q}(X_T &gt; 0) &gt; 0\)</span>.</li>
-<li>Cela impliquerait <span class="math inline">\(\mathbb{E}^{\mathbb{Q}}[\tilde{X}_T] &gt;
-0\)</span>, ce qui contredit le point (3). L’AO ne peut donc pas
-exister.</li>
+<div class="definition-item">
+Le prix <span class="math inline">\(x\)</span> obtenu est
+<strong>unique</strong>. En effet :
+<ol>
+<li>
+Le système de réplication a une <strong>solution unique</strong> <span class="math inline">\((x, \pi)\)</span>
+</li>
+<li>
+Tout autre prix créerait une <strong>opportunité d’arbitrage</strong>
+</li>
+<li>
+Ce prix ne dépend <strong>pas des probabilités réelles <span class="math inline">\(p\)</span></strong>, seulement de <span class="math inline">\(p^*\)</span>
+</li>
 </ol>
 </div>
-<div id="preuve-de-lunicité-du-prix-lien-avec-lespérance" class="section level4" number="5.2">
-<h4><span class="header-section-number">5.2</span> Preuve de l’Unicité
-du Prix (Lien avec l’Espérance)</h4>
-<p>Le prix d’un actif réplicable <span class="math inline">\(V_t\)</span> à l’instant <span class="math inline">\(t\)</span> est donné par : <span class="math display">\[\tilde{V}_t = \mathbb{E}^{\mathbb{Q}}[\tilde{V}_T
-| \mathcal{F}_t] \implies V_t = \frac{1}{(1+r)^{T-t}}
-\mathbb{E}^{\mathbb{Q}}[V_T | \mathcal{F}_t]\]</span> <em>Preuve :</em>
-Tout portefeuille répliquant <span class="math inline">\(V_T\)</span> a
-une valeur actualisée qui est une <span class="math inline">\(\mathbb{Q}\)</span>-martingale. Puisque <span class="math inline">\(X_T = V_T\)</span>, alors <span class="math inline">\(\tilde{X}_t = \mathbb{E}^{\mathbb{Q}}[\tilde{V}_T
-| \mathcal{F}_t]\)</span>. Par absence d’arbitrage, le prix de l’actif
-doit être égal à la valeur du portefeuille réplicant, soit <span class="math inline">\(V_t = X_t\)</span>.</p>
 </div>
-<div id="preuve-5.4.5-théorème-fondamental---étape-dexistence" class="section level4" number="5.3">
-<h4><span class="header-section-number">5.3</span> Preuve 5.4.5
-(Théorème Fondamental - Étape d’existence)</h4>
-<p><em>Note : Cette preuve repose sur la séparation des ensembles
-convexes (Théorème de Hahn-Banach).</em> On définit <span class="math inline">\(K\)</span> comme l’ensemble des richesses
-terminales actualisées de capital initial nul : <span class="math inline">\(K = \{ (\pi \cdot \tilde{S})_T, \pi \in
-\mathcal{P} \}\)</span>. L’absence d’arbitrage signifie que <span class="math inline">\(K \cap L^0_+(\Omega, \mathcal{F}, \mathbb{P}) =
-\{0\}\)</span>. Par le théorème de séparation, il existe une forme
-linéaire strictement positive (qui définit la densité de la mesure <span class="math inline">\(\mathbb{Q}\)</span>) qui sépare l’ensemble des
-stratégies possibles de l’ensemble des arbitrages, prouvant ainsi
-l’existence de la mesure <span class="math inline">\(\mathbb{Q}\)</span>.</p>
+<div class="definition-box">
+<div class="definition-title">
+Prix d’Arbitrage et Stratégie de Couverture
+</div>
+<div class="definition-item">
+<p>Soit un contrat financier dont le <strong>payoff</strong> à <span class="math inline">\(t=1\)</span> est modélisé par une variable
+aléatoire <span class="math inline">\(h\)</span>.</p>
+</div>
+<div class="definition-item">
+<p><strong>1. Prix d’arbitrage</strong> : Le prix équitable <span class="math inline">\(\overline{x}\)</span> à <span class="math inline">\(t=0\)</span> est donné par l’espérance actualisée
+sous <span class="math inline">\(\mathbb{P}^*\)</span> : <span class="math display">\[ \overline{x} = \frac{1}{1+r}
+\mathbb{E}^{\mathbb{P}^*}[h] = \frac{1}{1+r} \left[ p^* h(u) + (1-p^*)
+h(d) \right] \]</span></p>
+</div>
+<div class="definition-item">
+<p><strong>2. Stratégie de réplication (hedging)</strong> : La stratégie
+de couverture <span class="math inline">\(\overline{\pi}\)</span> qui
+permet de répliquer exactement le payoff est : <span class="math display">\[ \overline{\pi} = \frac{h(d) - h(u)}{S_1(d) -
+S_1(u)} \]</span> où <span class="math inline">\(S_1(u) = S_0 u\)</span>
+et <span class="math inline">\(S_1(d) = S_0 d\)</span>.</p>
+</div>
+</div>
+<p><strong>Mesure Martingale Équivalente (EMM) <span class="math inline">\(\mathbb{P}^*\)</span></strong> : L’existence d’une
+EMM est équivalente à l’AAO (1er Théorème Fondamental). <span class="math inline">\(\mathbb{P}^*\)</span> est une mesure sous laquelle
+les prix actualisés <span class="math inline">\(\tilde{S}_t = S_t /
+S^0_t\)</span> sont une martingale. <strong>Probabilité Neutre au Risque
+(<span class="math inline">\(p^*\)</span>)</strong> : Dans ce modèle
+complet (l’EMM est unique), <span class="math inline">\(p^*\)</span> est
+donnée par : <span class="math display">\[p^{*} = \mathbb{P}^*[S_1=S_0
+u] = \frac{(1+r)-d}{u-d}\]</span> * <strong>Prix d’Arbitrage</strong> :
+Le prix <span class="math inline">\(\overline{x}\)</span> d’un payoff
+<span class="math inline">\(h\)</span> à l’instant <span class="math inline">\(T=1\)</span> est son espérance actualisée sous
+<span class="math inline">\(\mathbb{P}^*\)</span> : <span class="math display">\[\overline{x} = \frac{1}{1+r}
+\mathbb{E}^{\mathbb{P}^{*}}[h] = \frac{1}{1+r} \left( p^* h(S_0 u) +
+(1-p^*) h(S_0 d) \right)\]</span></p>
+<hr />
+</div>
+<div id="chapitre-5-marchés-à-temps-discret-t-périodes" class="section level3" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Chapitre 5 :
+Marchés à temps discret (T périodes)</h3>
+</div>
 </div>
 </div>
 
@@ -1765,7 +2360,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3",
+      selectors: "h1,h2,h3,h4,h5,h6",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
