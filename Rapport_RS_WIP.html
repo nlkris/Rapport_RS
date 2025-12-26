@@ -1579,8 +1579,72 @@ padding-bottom: 5px;
 }
 </style>
 <p>```</p>
-<div id="le-rôle-des-marchés-financiers" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Le rôle des marchés
+<div id="introduction-comprendre-lévaluation-financière" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Introduction :
+Comprendre l’évaluation Financière</h1>
+<p>Le but de ce projet est de décrypter les mécanismes fondamentaux qui
+permettent de <strong>donner une valeur scientifique à un contrat
+financier</strong>. Pourquoi un produit vaut-il 10€ aujourd’hui plutôt
+que 12€ ? La réponse réside dans la capacité à modéliser le futur et à
+neutraliser le risque.</p>
+<div id="le-cycle-de-production-inversé" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Le Cycle de
+Production Inversé</h2>
+<p>Contrairement à l’industrie classique où l’on connaît le coût de
+revient (matières premières + main-d’œuvre) avant de fixer un prix de
+vente, la finance fonctionne sur un <strong>cycle de production
+inversé</strong> :</p>
+<ul>
+<li><strong>En industrie</strong> : Coût <span class="math inline">\(\to\)</span> Production <span class="math inline">\(\to\)</span> Vente. (Le prix couvre les coûts
+passés).</li>
+<li><strong>En finance</strong> : Engagement <span class="math inline">\(\to\)</span> Prix <span class="math inline">\(\to\)</span> Risques futurs. (Le prix doit couvrir
+des événements qui ne se sont pas encore produits).</li>
+</ul>
+<p>Le prix d’un contrat financier est donc l’estimation présente d’une
+réalité future incertaine.</p>
+</div>
+<div id="lexemple-historique-la-tuliperie-1637" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> L’exemple historique
+: La “Tuliperie” (1637)</h2>
+<p>Pour illustrer l’importance d’une notion de “prix juste” et de la
+gestion des risques, l’histoire nous offre l’exemple de la <strong>Crise
+des Tulipes</strong> aux Pays-Bas, souvent considérée comme la première
+bulle financière de l’histoire.</p>
+<div class="definition-box">
+<div class="definition-title">
+Étude de cas : Le contrat sur l’oignon de Tulipe
+</div>
+<div class="definition-item">
+À l’époque, les négociants ne s’échangeaient pas seulement des fleurs,
+mais des <strong>contrats à terme</strong> (ancêtres des produits
+dérivés) :
+<ul>
+<li>
+<strong>L’engagement</strong> : Un acheteur s’engageait en novembre à
+acheter un bulbe rare en juin prochain à un prix fixé à l’avance (ex:
+1000 florins).
+</li>
+<li>
+<strong>Le problème</strong> : En l’absence de modèles mathématiques
+(comme celui de Cox-Ross-Rubinstein que nous verrons plus loin), les
+prix n’étaient basés que sur la spéculation et l’offre immédiate.
+</li>
+<li>
+<strong>Le dénouement</strong> : Lorsque les prix se sont effondrés, les
+acheteurs possédaient des contrats les obligeant à payer un prix
+exorbitant pour un actif ne valant plus rien.
+</li>
+</ul>
+<p><strong>L’enjeu du pricing</strong> est précisément d’éviter cette
+décorrélation en liant mathématiquement le prix du contrat à la valeur
+réelle de l’actif sous-jacent et au coût de l’argent (le taux
+d’intérêt).</p>
+</div>
+</div>
+</div>
+</div>
+<div id="le-rôle-des-marchés-financiers" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Le rôle des marchés
 financiers</h1>
 <p>Les marchés financiers remplissent trois fonctions essentielles :</p>
 <ol style="list-style-type: decimal">
@@ -1612,8 +1676,8 @@ la demande et non par des indicateurs comme le chiffre
 d’affaires.</p></li>
 </ol>
 </div>
-<div id="vocabulaire" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Vocabulaire</h1>
+<div id="vocabulaire" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Vocabulaire</h1>
 <div class="definition-box">
 <div class="definition-title">
 Flux de trésorerie (Cash flow)
@@ -1645,8 +1709,8 @@ La monnaie de libellé(numéraire) dans laquelle les flux sont payés.
 </ul>
 </div>
 </div>
-<div id="type-de-produits-financiers" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Type de produits
+<div id="type-de-produits-financiers" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Type de produits
 financiers:</h2>
 <ul>
 <li><p><strong>Actions (Stocks)</strong> : Titres de propriété - Part du
@@ -1708,8 +1772,8 @@ prédéterminé.
 </ul>
 </div>
 </div>
-<div id="taux-dintérêt-et-actualisation" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Taux d’Intérêt et
+<div id="taux-dintérêt-et-actualisation" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Taux d’Intérêt et
 Actualisation</h1>
 <p>Le taux d’intérêt est le prix payé pour l’utilisation de l’argent
 d’autrui sur une période donnée. Il représente la compensation pour le
@@ -1766,11 +1830,11 @@ présente.</p>
 </div>
 </div>
 </div>
-<div id="une-première-approche-du-pricing-cadre-non-aléatoire" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Une Première Approche
+<div id="une-première-approche-du-pricing-cadre-non-aléatoire" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Une Première Approche
 du Pricing : Cadre Non-Aléatoire</h1>
-<div id="introduction-à-la-notion-darbitrage" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Introduction à la
+<div id="introduction-à-la-notion-darbitrage" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Introduction à la
 notion d’Arbitrage</h2>
 <p>Afin d’aborder cette première approche de pricing dans un cadre
 déterministe, il nous faut d’abord définir la notion d’arbitrage. Elle
@@ -1795,8 +1859,8 @@ Probabilité non nulle de réaliser un profit.</p>
 mise de fonds initiale.</p>
 </div>
 </div>
-<div id="cas-déterministe-le-prix-dune-obligation-à-coupon-zéro-z.c." class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Cas déterministe : Le
+<div id="cas-déterministe-le-prix-dune-obligation-à-coupon-zéro-z.c." class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Cas déterministe : Le
 Prix d’une Obligation à Coupon Zéro (z.c.)</h2>
 <p>Nous analysons comment déterminer un prix équitable pour des produits
 financiers générant des flux de trésorerie déterministes à des dates
@@ -1836,8 +1900,8 @@ p(1+r)^T] &gt; 0\)</span></br></li>
 <p><strong>Conclusion</strong> : Le prix d’équilibre est nécessairement
 : <span class="math display">\[ p(t, T) = (1 + r)^{-(T-t)} \]</span></p>
 </div>
-<div id="le-principe-de-réplication-extension-au-prix-dun-contrat-générique-c" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Le principe de
+<div id="le-principe-de-réplication-extension-au-prix-dun-contrat-générique-c" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Le principe de
 réplication : Extension au prix d’un contrat générique C</h2>
 <p>Nous cherchons maintenant à déterminer le prix d’un contrat générique
 C qui génère les flux :</p>
@@ -1900,15 +1964,15 @@ où <span class="math inline">\(C_i\)</span> est le prix du Zéro-Coupon
 de maturité <span class="math inline">\(i\)</span>.</p>
 </div>
 </div>
-<div id="cas-probabiliste-modèle-de-cox-ross-rubinstein-binomial" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Cas probabiliste:
+<div id="cas-probabiliste-modèle-de-cox-ross-rubinstein-binomial" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Cas probabiliste:
 Modèle de Cox-Ross-Rubinstein (Binomial)</h1>
 <p>Dans cette partie nous cherchons à évaluer des actifs financiers en
 introduisant un aléas : la valeur des flux futurs. Nous nous appuierons
 donc sur le <strong>modèle de Cox-Ross-Rubinstein(aussi appelé le modèle
 binomial )</strong></p>
-<div id="définition-du-modèle-binomial" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Définition du modèle
+<div id="définition-du-modèle-binomial" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Définition du modèle
 binomial</h2>
 <p>À chaque période, le prix d’un actif ne peut prendre que deux valeurs
 possibles :</p>
@@ -1929,8 +1993,8 @@ Modèle binomial à une période
 </p>
 </div>
 </div>
-<div id="définition-dun-portefeuille-et-du-processus-de-richesse-associé" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Définition d’un
+<div id="définition-dun-portefeuille-et-du-processus-de-richesse-associé" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Définition d’un
 portefeuille et du processus de richesse associé</h2>
 <div class="definition-box">
 <div class="definition-title">
@@ -1989,8 +2053,8 @@ placé</strong> dans l’actif sans risque <span class="math inline">\(S^0\)</sp
 <li>Les seuls flux proviennent des rendements de <span class="math inline">\(S\)</span> et <span class="math inline">\(S^0\)</span></li>
 </ul>
 </div>
-<div id="prix-et-richesse-actualisés" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Prix et Richesse
+<div id="prix-et-richesse-actualisés" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Prix et Richesse
 Actualisés</h2>
 <p>Comme démontré dans la section sur l’actualisation, la <strong>valeur
 temporelle de l’argent</strong> est fondamentale en finance. Dans le
@@ -2037,8 +2101,8 @@ actualisée:</p>
 \widetilde{X}_1^{(x,\pi)} = x + \pi(\widetilde{S}_1 - \widetilde{S}_0)
 \]</span></p>
 </div>
-<div id="notion-darbitrage" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Notion
+<div id="notion-darbitrage" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Notion
 d’arbitrage</h2>
 <p>Rappelons la définition : Une opportunité d’arbitrage (AO) est un
 portefeuille de la forme <span class="math inline">\((0, \pi)\)</span>
@@ -2077,8 +2141,8 @@ profit</strong> non plus : <span class="math display">\[\mathbb{P}[X_T =
 capital initial ne peut pas être rentable.</strong></p>
 </div>
 </div>
-<div id="quelles-conditions-sur-les-paramètres-garantissent-laao" class="section level3" number="5.4.1">
-<h3><span class="header-section-number">5.4.1</span> Quelles conditions
+<div id="quelles-conditions-sur-les-paramètres-garantissent-laao" class="section level3" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Quelles conditions
 sur les paramètres garantissent l’AAO ?</h3>
 <div class="theorem-box">
 <div class="theorem-title">
@@ -2304,8 +2368,8 @@ Le prix <span class="math inline">\(\overline{x}\)</span> d’un payoff
 (1-p^*) h(S_0 d) \right)\]</span></p>
 <hr />
 </div>
-<div id="chapitre-5-marchés-à-temps-discret-t-périodes" class="section level3" number="5.4.2">
-<h3><span class="header-section-number">5.4.2</span> Chapitre 5 :
+<div id="chapitre-5-marchés-à-temps-discret-t-périodes" class="section level3" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> Chapitre 5 :
 Marchés à temps discret (T périodes)</h3>
 </div>
 </div>

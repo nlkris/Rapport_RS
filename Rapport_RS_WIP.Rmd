@@ -128,6 +128,38 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+# Introduction : Comprendre l'évaluation Financière
+
+Le but de ce projet est de décrypter les mécanismes fondamentaux qui permettent de **donner une valeur scientifique à un contrat financier**. Pourquoi un produit vaut-il 10€ aujourd'hui plutôt que 12€ ? La réponse réside dans la capacité à modéliser le futur et à neutraliser le risque.
+
+## Le Cycle de Production Inversé
+
+Contrairement à l'industrie classique où l'on connaît le coût de revient (matières premières + main-d'œuvre) avant de fixer un prix de vente, la finance fonctionne sur un **cycle de production inversé** :
+
+* **En industrie** : Coût $\to$ Production $\to$ Vente. (Le prix couvre les coûts passés).
+* **En finance** : Engagement $\to$ Prix $\to$ Risques futurs. (Le prix doit couvrir des événements qui ne se sont pas encore produits).
+
+Le prix d'un contrat financier est donc l'estimation présente d'une réalité future incertaine.
+
+## L'exemple historique : La "Tuliperie" (1637)
+
+Pour illustrer l'importance d'une notion de "prix juste" et de la gestion des risques, l'histoire nous offre l'exemple de la **Crise des Tulipes** aux Pays-Bas, souvent considérée comme la première bulle financière de l'histoire.
+
+
+
+<div class="definition-box">
+<div class="definition-title">Étude de cas : Le contrat sur l'oignon de Tulipe</div>
+<div class="definition-item">
+À l'époque, les négociants ne s'échangeaient pas seulement des fleurs, mais des <strong>contrats à terme</strong> (ancêtres des produits dérivés) :
+<ul>
+<li><strong>L'engagement</strong> : Un acheteur s'engageait en novembre à acheter un bulbe rare en juin prochain à un prix fixé à l'avance (ex: 1000 florins).</li>
+<li><strong>Le problème</strong> : En l'absence de modèles mathématiques (comme celui de Cox-Ross-Rubinstein que nous verrons plus loin), les prix n'étaient basés que sur la spéculation et l'offre immédiate.</li>
+<li><strong>Le dénouement</strong> : Lorsque les prix se sont effondrés, les acheteurs possédaient des contrats les obligeant à payer un prix exorbitant pour un actif ne valant plus rien.</li>
+</ul>
+<strong>L'enjeu du pricing</strong> est précisément d'éviter cette décorrélation en liant mathématiquement le prix du contrat à la valeur réelle de l'actif sous-jacent et au coût de l'argent (le taux d'intérêt).
+</div>
+</div>
+
 # Le rôle des marchés financiers 
 
 Les marchés financiers remplissent trois fonctions essentielles :
