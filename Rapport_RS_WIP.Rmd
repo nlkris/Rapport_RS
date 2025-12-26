@@ -743,3 +743,10 @@ où $S_1(u) = S_0 u$ et $S_1(d) = S_0 d$.
 
 ### Chapitre 5 : Marchés à temps discret (T périodes)
 
+Le marché est défini par un horizon $T$ et une **Filtration** $\mathbb{F} = (\mathcal{F}_t)_{t=0}^T$ qui modélise l'information disponible.
+
+* **Processus de Prix Actualisé** : $\tilde{S}_t = S_t / S^0_t$.
+* **Portefeuille Auto-Finançant** : Une stratégie $\pi = (\pi^0, \pi^1)$ est auto-finançante si la variation de la richesse $X_t$ est due uniquement aux variations des actifs. La richesse actualisée $\tilde{X}_t$ est :
+    $$\tilde{X}_{t}^{(x,\pi)}=x+\sum_{i=1}^{t}\pi_{i}\cdot(\tilde{S}_{i}-\tilde{S}_{i-1}).$$
+    où $x$ est le capital initial et $\pi_i$ est le nombre d'actions risquées détenues sur $[i-1, i)$, un processus **prévisible** (i.e., $\pi_i$ est $\mathcal{F}_{i-1}$-mesurable).
+

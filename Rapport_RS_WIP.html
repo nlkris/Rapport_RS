@@ -2371,6 +2371,21 @@ Le prix <span class="math inline">\(\overline{x}\)</span> d’un payoff
 <div id="chapitre-5-marchés-à-temps-discret-t-périodes" class="section level3" number="6.4.2">
 <h3><span class="header-section-number">6.4.2</span> Chapitre 5 :
 Marchés à temps discret (T périodes)</h3>
+<p>Le marché est défini par un horizon <span class="math inline">\(T\)</span> et une <strong>Filtration</strong>
+<span class="math inline">\(\mathbb{F} =
+(\mathcal{F}_t)_{t=0}^T\)</span> qui modélise l’information
+disponible.</p>
+<ul>
+<li><strong>Processus de Prix Actualisé</strong> : <span class="math inline">\(\tilde{S}_t = S_t / S^0_t\)</span>.</li>
+<li><strong>Portefeuille Auto-Finançant</strong> : Une stratégie <span class="math inline">\(\pi = (\pi^0, \pi^1)\)</span> est auto-finançante
+si la variation de la richesse <span class="math inline">\(X_t\)</span>
+est due uniquement aux variations des actifs. La richesse actualisée
+<span class="math inline">\(\tilde{X}_t\)</span> est : <span class="math display">\[\tilde{X}_{t}^{(x,\pi)}=x+\sum_{i=1}^{t}\pi_{i}\cdot(\tilde{S}_{i}-\tilde{S}_{i-1}).\]</span>
+où <span class="math inline">\(x\)</span> est le capital initial et
+<span class="math inline">\(\pi_i\)</span> est le nombre d’actions
+risquées détenues sur <span class="math inline">\([i-1, i)\)</span>, un
+processus <strong>prévisible</strong> (i.e., <span class="math inline">\(\pi_i\)</span> est <span class="math inline">\(\mathcal{F}_{i-1}\)</span>-mesurable).</li>
+</ul>
 </div>
 </div>
 </div>
