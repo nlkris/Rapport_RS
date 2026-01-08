@@ -1,15 +1,19 @@
 ---
-title: "Rapport_RS_Finance_WIP"
-author: "nguye"
-date: "2025-12-16"
+title: "Introduction aux marchés financiers à temps discret et au pricing de produits financiers"
+subtitle: 'Rapport de Reading Seminar, Institut National des Sciences Appliqués, 4GMM '
+author: 
+  - Deleris Romain 
+  - Paulien-Camy Lucas
+  - Nguyen Luc-Christelle
+date: "2026-01-08"
 output:
   html_document:
     toc: true
     toc_float: true
     number_sections: true
-    toc_depth: 6  
-    toc_collapsed: false  
-    
+    toc_depth: 6
+    toc_collapsed: false
+    theme: default
   editor_options:
     markdown:
       wrap: 72
@@ -60,7 +64,7 @@ output:
 }
 
 ```{css, echo=FALSE}
-/* CORRECTION POUR LES FORMULES MATHÉMATIQUES EN LIGNE */
+
 .math {
   display: inline-block !important;
   vertical-align: middle !important;
@@ -68,23 +72,22 @@ output:
   margin: 0 1px !important;
 }
 
-/* Ajustement spécifique pour les indices/subscripts */
+
 .mjx-msub .mjx-sub {
   font-size: 70% !important;
   bottom: -0.2em !important;
 }
 
-/* Pour les formules avec indices comme I_C, F_V */
+
 .mjx-mi + .mjx-msub {
   vertical-align: -0.1em !important;
 }
 
-/* Ajustement du texte autour des formules */
 .definition-item, p, li {
   line-height: 1.6 !important;
 }
 
-/* S'assurer que tout s'aligne bien */
+
 .math + span, span + .math {
   vertical-align: middle !important;
 }
@@ -139,6 +142,10 @@ Contrairement à l'industrie classique où l'on connaît le coût de revient (ma
 * **En industrie** : Coût $\to$ Production $\to$ Vente. (Le prix couvre les coûts passés).
 * **En finance** : Engagement $\to$ Prix $\to$ Risques futurs. (Le prix doit couvrir des événements qui ne se sont pas encore produits).
 
+```{r cycle, echo=FALSE, fig.cap="Illustration du cycle inversé pour déterminer le prix d'un produit financier", out.width="60%", fig.align='center'}
+knitr::include_graphics("./figures/cycle_inverse.png")
+```
+
 Le prix d'un contrat financier est donc l'estimation présente d'une réalité future incertaine.
 
 ## L'exemple historique : La "Tuliperie" (1637)
@@ -147,7 +154,7 @@ Pour illustrer l'importance d'une notion de "prix juste" et de la gestion des ri
 
 
 
-<div class="definition-box">
+<div style="margin-left: 30px; padding-left: 15px; border-left: 2px solid #666; color: #444; font-style: italic;">
 <div class="definition-title">Étude de cas : Le contrat sur l'oignon de Tulipe</div>
 <div class="definition-item">
 À l'époque, les négociants ne s'échangeaient pas seulement des fleurs, mais des <strong>contrats à terme</strong> (ancêtres des produits dérivés) :
@@ -159,6 +166,8 @@ Pour illustrer l'importance d'une notion de "prix juste" et de la gestion des ri
 <strong>L'enjeu du pricing</strong> est précisément d'éviter cette décorrélation en liant mathématiquement le prix du contrat à la valeur réelle de l'actif sous-jacent et au coût de l'argent (le taux d'intérêt).
 </div>
 </div>
+
+Cet exemple illustre parfaitement les dangers d'un marché financier qui ne remplirait pas correctement ses fonctions essentielles. Les marchés financiers modernes ont justement évolué pour structurer ces échanges et éviter ces situations.
 
 # Le rôle des marchés financiers 
 
@@ -388,7 +397,7 @@ Ainsi, pour un marché sans opportunité d'arbitrage, le prix $p_A$ d'un contrat
     où $C_i$ est le prix du Zéro-Coupon de maturité $i$.
 
 
-# Cas probabiliste: Modèle de Cox-Ross-Rubinstein (Binomial)
+# Cas probabiliste: Modèle de Cox-Ross-Rubinstein (à 1 période)
 
 Dans cette partie nous cherchons à évaluer des actifs financiers en introduisant un aléas : la valeur des flux futurs. Nous nous appuierons donc sur le **modèle de Cox-Ross-Rubinstein(aussi appelé le modèle binomial )**
 
@@ -606,7 +615,41 @@ La condition $d < 1+r < u$ signifie que l'actif risqué $S$ est effectivement pl
 * **$d < 1+r$** : L'actif risqué peut prendre des valeurs inférieures à l'actif sans risque, ce qui définit la notion de risque (perte potentielle par rapport au placement sûr).
 
 
-**Preuve (i) ⇔ (ii)**. 
+<div class="definition-box">
+<div class="definition-title">Unicité du Prix</div>
+<div class="definition-item">
+Le prix $x$ obtenu est <strong>unique</strong>. En effet :
+<ol>
+<li>Le système de réplication a une <strong>solution unique</strong> $(x, \pi)$</li>
+<li>Tout autre prix créerait une <strong>opportunité d'arbitrage</strong></li>
+<li>Ce prix ne dépend <strong>pas des probabilités réelles $p$</strong>, seulement de $p^*$</li>
+</ol>
+</div>
+</div>
+
+
+<div class="definition-box">
+<div class="definition-title">Prix d'Arbitrage et Stratégie de Couverture</div>
+
+<div class="definition-item">
+Soit un contrat financier dont le <strong>payoff</strong> à $t=1$ est modélisé par une variable aléatoire $h$.
+</div>
+
+<div class="definition-item">
+<strong>1. Prix d'arbitrage</strong> :
+Le prix équitable $\overline{x}$ à $t=0$ est donné par l'espérance actualisée sous $\mathbb{P}^*$ :
+$$ \overline{x} = \frac{1}{1+r} \mathbb{E}^{\mathbb{P}^*}[h] = \frac{1}{1+r} \left[ p^* h^+ + (1-p^*) h^- \right] $$
+</div>
+
+<div class="definition-item">
+<strong>2. Stratégie de réplication (hedging)</strong> :
+La stratégie de couverture $\overline{\pi}$ qui permet de répliquer exactement le payoff est :
+$$ \overline{\pi} = \frac{h^- - h^+}{S_1(d) - S_1(u)} $$
+où $S_1(u) = S_0 u$ et $S_1(d) = S_0 d$.
+</div>
+</div>
+
+**Preuve**. 
 <div style="margin-left: 30px; padding-left: 15px; border-left: 2px solid #666; color: #444; font-style: italic;">
 
 Soit un produit dérivé dont le payoff à $t=1$ est $h$. Dans notre modèle binomial, $h$ peut prendre deux valeurs :
@@ -688,65 +731,398 @@ où $\mathbb{P}^*$ est la **mesure neutre au risque** définie par $\mathbb{P}^*
 
 </div>
 
+
+# Modèles de marchés à temps discret et mesures martingales équivalentes (Généralisation à T périodes)
+
+Dans la partie 6, nous avons étudié un modèle binomial à une période, qui constitue un cadre simple pour introduire la notion d'analyse des marchés financiers. Dans ce modèle, nous avons vu que l’absence d’opportunité d’arbitrage est équivalente à l’existence d’une *unique mesure martingale équivalente* \( \mathbb{P}^* \), sous laquelle le prix actualisé de l’actif risqué est une martingale. Cette propriété permet alors d’exprimer le prix d’arbitrage d’un contrat financier comme l’espérance actualisée de son payoff sous \( \mathbb{P}^* \), et d’en déduire explicitement une stratégie de réplication.
+
+Ce résultat met en évidence un lien entre absence d’arbitrage, réplication et martingales. Cependant, il repose sur un cadre très particulier : un modèle à une seule période, avec deux d’états du monde. 
+
+Cette partie vise précisément à généraliser les résultats du chapitre 4 à des marchés financiers à temps discret et à horizon multiple, en introduisant explicitement la notion de filtration pour modéliser l’évolution de l’information. Dans ce cadre plus général, la mesure martingale équivalente n’apparaît plus comme une conséquence de la réplication, mais comme un objet central de la théorie de l’évaluation sans arbitrage.
+
+## Cadre probabiliste et modélisation du marché
+
+### Structure probabiliste et filtration
+
+On considère un espace de probabilité fini
+$$
+(\Omega, F, \mathbb{P}),
+$$
+où $\Omega$ représente l'ensemble des états du monde, $F$ l'ensemble des événements observables, et $\mathbb{P}$ la probabilité réelle (historique) associée aux événements.
+
 <div class="definition-box">
-<div class="definition-title">Unicité du Prix</div>
+<div class="definition-title">Filtration</div>
+
 <div class="definition-item">
-Le prix $x$ obtenu est <strong>unique</strong>. En effet :
-<ol>
-<li>Le système de réplication a une <strong>solution unique</strong> $(x, \pi)$</li>
-<li>Tout autre prix créerait une <strong>opportunité d'arbitrage</strong></li>
-<li>Ce prix ne dépend <strong>pas des probabilités réelles $p$</strong>, seulement de $p^*$</li>
-</ol>
+Une filtration est une famille croissante de sous-tribus
+$$
+(F_t)_{t=0,\dots,T}
+$$
+telle que
+$$
+F_0 \subset F_1 \subset \cdots \subset F_T = F.
+$$
+</div>
+
+<div class="definition-item">
+Chaque tribu $F_t$ représente l'ensemble des informations disponibles à la date $t$. En particulier, $F_0 = \{\varnothing, \Omega\}$ correspond à l'absence d'information initiale.
+</div>
+
+<div class="definition-item">
+Cette structure permet de modéliser l'évolution de l'information au cours du temps et impose que toute stratégie financière ne puisse dépendre que de l'information disponible au moment où les décisions sont prises.
 </div>
 </div>
 
+### Modèle de Marché en Temps Discret
 
 <div class="definition-box">
-<div class="definition-title">Prix d'Arbitrage et Stratégie de Couverture</div>
+<div class="definition-title">Marché financier</div>
 
 <div class="definition-item">
-Soit un contrat financier dont le <strong>payoff</strong> à $t=1$ est modélisé par une variable aléatoire $h$.
-</div>
-
-<div class="definition-item">
-<strong>1. Prix d'arbitrage</strong> :
-Le prix équitable $\overline{x}$ à $t=0$ est donné par l'espérance actualisée sous $\mathbb{P}^*$ :
-$$ \overline{x} = \frac{1}{1+r} \mathbb{E}^{\mathbb{P}^*}[h] = \frac{1}{1+r} \left[ p^* h(u) + (1-p^*) h(d) \right] $$
+Le marché contient deux types d'actifs :
 </div>
 
 <div class="definition-item">
-<strong>2. Stratégie de réplication (hedging)</strong> :
-La stratégie de couverture $\overline{\pi}$ qui permet de répliquer exactement le payoff est :
-$$ \overline{\pi} = \frac{h(d) - h(u)}{S_1(d) - S_1(u)} $$
-où $S_1(u) = S_0 u$ et $S_1(d) = S_0 d$.
+1. <strong>Actif sans risque</strong> (obligation) :
+$$
+B_t = (1+r)^t
+$$
+où $r$ est le taux d'intérêt sans risque.
+</div>
+
+<div class="definition-item">
+L'obligation représente un placement sûr, comme un compte épargne. Sa valeur est certaine et croît exponentiellement avec le temps. C'est notre "référence" pour mesurer la valeur de l'argent.
+</div>
+
+<div class="definition-item">
+2. <strong>Actifs risqués</strong> (actions) :
+$$
+S_t = (S^1_t, \dots, S^d_t)
+$$
+où $S_t$ est $F_t$-mesurable (prix connu à l'instant $t$).
+</div>
+
+<div class="definition-item">
+Les actions ont des prix incertains qui évoluent aléatoirement. Leur valeur future n'est pas connue à l'avance. L'hypothèse "$S_t$ est $F_t$-mesurable" signifie simplement qu'à l'instant $t$, le prix $S_t$ est observé et fait partie de l'information disponible.
+</div>
+</div>
+
+Cette distinction entre actif sûr et actifs risqués reflète la réalité des marchés financiers. Les investisseurs ont toujours le choix entre un placement sans risque (mais avec rendement faible) et des placements risqués (avec potentiel de gain plus élevé, mais aussi de perte).
+
+### Contrainte d'informations et stratégie d'auto-financement
+
+Dans la modélisation de notre marché, une contrainte de réalisme est posée : la décision d'acheter ou de vendre des actions à l'instant $t$ doit se faire avant de voir les nouveaux prix, c'est-à-dire qu'elle s'appuie sur l'information disponible juste avant $t$. C'est ce qu'on appelle une stratégie prévisible.
+
+<div class="definition-box">
+<div class="definition-title">Stratégie Prévisible</div>
+
+<div class="definition-item">
+Une stratégie $\pi = (\pi_t)_{t=1,\dots,T}$ est <strong>prévisible</strong> si
+$$
+\pi_t \text{ est } F_{t-1}\text{-mesurable}.
+$$
+</div>
+</div>
+
+Nous imposons que les portefeuilles soient **auto-financés**, c'est-à-dire qu'aucun apport ni retrait d'argent n'intervienne entre la date initiale et la date finale.
+
+<div class="definition-box">
+<div class="definition-title">Portefeuille auto-financé</div>
+
+<div class="definition-item">
+Un portefeuille est auto-financé si sa valeur $X_t$ satisfait :
+$$
+X_t = \pi_t \cdot S_t + \text{(position en obligations)}
+$$
+</div>
+
+<div class="definition-item">
+<strong>Forme équivalente avec prix actualisés</strong> :
+$$
+\widetilde{X}_t = \widetilde{X}_{t-1} + \pi_t \cdot (\widetilde{S}_t - \widetilde{S}_{t-1})
+$$
+où $\widetilde{S}_t$ et $\widetilde{X}_t$ sont les prix et valeurs actualisés.
+</div>
+
+<div class="definition-item">
+C'est-à-dire qu'ils sont exprimés en unités de l'actif sans risque :
+$$
+\widetilde{S}_t := \frac{S_t}{B_t} = \frac{S_t}{(1+r)^t}
+$$
+</div>
+
+<div class="definition-item">
+La valeur actualisée d'un portefeuille est :
+$$
+\widetilde{X}_t = \frac{X_t}{B_t}
+$$
+</div>
+</div>
+
+##  Théorème Fondamental de l'Évaluation d'Actifs et Contigents répliquables
+
+### Mesure Martingale Équivalente
+
+<div class="definition-box">
+<div class="definition-title">Mesure Martingale Équivalente</div>
+
+<div class="definition-item">
+Une probabilité $P^*$ est une MME si :
+</div>
+<div class="definition-item">
+1. <strong>Équivalence</strong> : $P^* \sim P$ (mêmes événements possibles)<br>
+2. <strong>Propriété martingale</strong> :
+$$
+\mathbb{E}^{P^*}[\widetilde{S}_t \mid F_{t-1}] = \widetilde{S}_{t-1}
+$$
 </div>
 
 </div>
 
+Sous $P^*$, les prix actualisés des actifs risqués n'ont pas de tendance (leur espérance conditionnelle est égale à leur valeur actuelle).
+
+### Premier Théorème Fondamental de l'Évaluation d'Actifs
+
+Ce théorème établit un lien entre la finance et les mathématiques. Il montre que l'absence d'arbitrage (condition économique réaliste) est mathématiquement équivalente à l'existence d'une probabilité $P^*$ sous laquelle les prix actualisés suivent une martingale.
+
+<div class="theorem-box">
+<div class="theorem-title">Théorème Fondamental (Premier Théorème de l'Évaluation d'Actifs)</div>
+
+<div class="definition-item">
+Dans un marché financier en temps discret, les deux conditions suivantes sont équivalentes :
+</div>
+
+<div class="definition-item">
+1. <strong>Absence d'opportunités d'arbitrage</strong><br>
+2. <strong>Existence d'une mesure martingale équivalente (MME)</strong> $P^*$
+</div>
+
+<div class="definition-item">
+$$
+\boxed{
+\text{Marché sans arbitrage}
+\Longleftrightarrow
+\exists P^* \text{ (mesure martingale équivalente)}
+}
+$$
+</div>
+</div>
+
+Ce théorème se trouve au coeur de la théorie moderne du pricing des produits dérivés. Il permet de calculer des prix théoriques en utilisant uniquement des calculs d'espérance sous $P^*$.
+
+### Prix des produits financiers réplicables
+
+En finance, un produit financier est un actif dont la valeur future dépend de l'évolution d'autres actifs. Lorsqu'un tel produit peut être reproduit exactement par une combinaison d'actifs déjà présents sur le marché, on dit qu'il est **réplicable**.
+
+<div class="definition-box">
+<div class="definition-title"> Produit Réplicable</div>
+
+<div class="definition-item">
+Un produit financier (comme une option) est dit <strong>réplicable</strong> si on peut créer un portefeuille qui reproduit exactement son payoff à maturité.
+</div>
+
+<div class="definition-item">
+<strong>Définition formelle</strong> :
+Un payoff $h$ (à maturité $T$) est réplicable s'il existe une stratégie auto-financée $\pi$ telle que :
+$$
+X_T(\pi) = h
+$$
+où $X_T(\pi)$ est la valeur du portefeuille à maturité $T$.
+</div>
+</div>
+
+Cette définition signifie qu'il existe une stratégie de trading (un plan d'achat/vente d'actions et d'obligations au cours du temps) qui, avec un certain capital initial, permet d'obtenir exactement le même gain que le produit financier à maturité. 
+
+Lorsqu'un produit est réplicable, l'absence d'arbitrage impose que son prix soit unique.
+
+<div class="theorem-box">
+<div class="theorem-title">Théorème de Pricing des produits Réplicables</div>
+
+<div class="definition-item">
+Si un produit de payoff $h$ est réplicable, alors son prix d'arbitrage à l'instant $t$ est unique et donné par :
+</div>
+
+<div class="definition-item">
+$$
+\boxed{
+\text{Prix}_t = B_t \cdot \mathbb{E}^{P^*}\left[ \frac{h}{B_T} \;\middle|\; F_t \right]
+}
+$$
+où $P^*$ est <strong>n'importe quelle</strong> mesure martingale équivalente.
+</div>
+
+<div class="definition-item">
+<strong>Cas particulier (prix initial)</strong> :
+$$
+\text{Prix}_0 = \frac{1}{(1+r)^T} \mathbb{E}^{P^*}[h]
+$$
+</div>
+
+</div>
+
+Ce résultat fondamental établit que le pricing des produits dérivés réplicables se réduit à un calcul d'espérance sous une MME. La MME permet de calculer des prix 'neutres au risque' en procédant à une réplication dynamique elles transforment une position risquée en une position couverte.
+C'est le fondement de nombreuses méthodes d'évaluation en finance , permettant de déterminer des prix théoriques cohérents avec l'hypothèse de marchés sans opportunités d'arbitrage. 
 
 
+# Principe de programmation dynamique : Modèle Modèle de Cox-Ross-Rubinstein (à T périodes)
+
+## 1. Introduction et Principe Général
+
+On généralise le modèle de **Cox-Ross-Rubinstein** (ou **modèle binomial**) sur plusieurs périodes.Le modèle de **Cox-Ross-Rubinstein** est une méthode numérique utilisée pour évaluer des options financières.  
+Il repose sur la discrétisation du temps en \( N \) périodes.
+
+L'hypothèse fondamentale est qu'à chaque étape de temps, le prix de l'actif sous-jacent \( S \) ne peut évoluer que de deux manières :
+
+- **Une hausse (Up)** : multiplié par un facteur \( u \)
+- **Une baisse (Down)** : multiplié par un facteur \( d \)
+
+```{r binT, echo=FALSE, fig.cap="Modèle Binomial à T périodes", out.width="80%", fig.align='center'}
+knitr::include_graphics("./figures/CR_T.png")
+```
+
+L'objectif du code fourni est de construire cet *arbre* de prix possibles, puis de remonter le temps (**récurrence**) pour déterminer la valeur de l'option à l'instant initial \( t = 0 \). C'est le principe de la programmation dynamique. 
+
+<div class="theorem-box">
+<div class="theorem-title">Théorème de Programmation Dynamique</div>
+
+<div class="definition-item">
+Dans le modèle binomial à $T$ périodes, le prix d'une option de payoff $h = g(S_T)$ peut être calculé par récurrence arrière :
+</div>
+
+<div class="definition-item">
+1. <strong>Prix à maturité</strong> :
+$$
+g_T(x) = g(x)
+$$
+</div>
+
+<div class="definition-item">
+2. <strong>Récurrence arrière</strong> (pour $t = T-1, T-2, \dots, 0$) :
+$$
+g_t(x) = p^* g_{t+1}(xu) + (1-p^*) g_{t+1}(xd)
+$$
+</div>
+
+<div class="definition-item">
+3. <strong>Prix à l'instant $t$</strong> :
+$$
+\rho_t = (1+r)^{-(T-t)} g_t(S_t)
+$$
+</div>
+
+<div class="definition-item">
+4. <strong>Stratégie de réplication</strong> :
+La couverture dynamique est donnée par :
+$$
+\pi_t = (1+r)^{-(T-t)} \varphi_t(S_{t-1})
+$$
+avec
+$$
+\varphi_t(x) = \frac{g_t(xu) - g_t(xd)}{x(u-d)}
+$$
+</div>
+
+</div>
+
+```{r arbre-binomial, echo=FALSE, fig.cap="Exemple d'arbre binomial pour S₀=100 et p=0.5", out.width="60%", fig.align='center'}
+knitr::include_graphics("./figures/arbre_binomial.png")
+```
+
+## La Démarche Récursive : *Backward Induction*
+
+Le cœur du TP réside dans la fonction `option_price`.  
+La méthode fonctionne en deux phases distinctes :
+
+- Phase **Forward** (construction)
+- Phase **Backward** (évaluation)
+
+---
+
+### Phase 1 : Construction de l'Arbre de l'Actif (*Forward*)
+
+ 
+On part du prix initial \( S_0 \) et on projette les prix futurs jusqu'à la maturité \( T \).
+
+Dans la fonction `graph_stock` du notebook :
+
+- À l'étape \( 0 \), on a :
+
+\[
+S_{0,0} = S_0
+\]
+
+- À l'étape \( n \), pour chaque nœud \( j \), on calcule les nœuds de l'étape \( n+1 \) :
+
+\[
+S_{n+1, j} = S_{n, j} \cdot u \quad \text{(hausse)}
+\]
+
+\[
+S_{n+1, j+1} = S_{n, j} \cdot d \quad \text{(baisse)}
+\]
+
+Cette construction permet d'obtenir tous les prix possibles de l'actif sous-jacent jusqu'à la maturité.
+
+---
+
+### Phase 2 : Évaluation de l'Option (*Backward – Récursif*)
+
+C'est ici que la logique de **pricing** intervient.  
+On ne peut pas calculer directement le prix de l'option à \( t = 0 \), car il dépend des valeurs futures.
+
+On utilise donc le principe de **programmation dynamique**.
+
+---
+
+#### Condition Terminale (Maturité \( N \))
+
+On se place tout à la fin de l'arbre (au temps \( T \)).  
+À cette date, le prix de l'option est connu avec certitude : c'est son **payoff**.
+
+Pour une option **Call** on retourne :
+
+\[
+max(x-K,0)
+\]
 
 
+#### Récurrence de (N-1) à 0
+
+Une fois les valeurs connues à l'étape $n+1$, on peut calculer la valeur à l'étape $n$. 
+
+Le prix de l'option à un nœud est l'espérance actualisée des valeurs futures possibles, pondérées par la probabilité risque-neutre $p$.
+
+La formule de récurrence utilisée dans la boucle est:
 
 
+$$
+\rho_t = (1+r)^{-(T-t)} \mathbb{E}^{\mathbb{P}^*} [h \mid F_t]
+$$
+
+### Résultat
+
+Après simulation on obtient l'arbre suivant.
+
+```{r arbre-binomial2, echo=FALSE, fig.cap="Arbre binomial après simulation", out.width="60%", fig.align='center'}
+knitr::include_graphics("./figures/arbre_binomial_call.png")
+```
+
+Pour un strike de valeur 100, le prix à t=0 pour un call Européen vaut environ 63 euros.
+
+On peut réaliser les même simulation pour d'autres options comme un Put.
+
+# Conclusion et Ouverture
+
+Ce travail nous a permis de voir une première approche pour déterminer le "juste prix" d'une action financière et se protéger contre le risque d'un environnement incertain.
+
+À travers le modèle de Cox-Ross-Rubinstein (CRR), nous avons montré que l'évaluation d'un produit dérivé ne repose pas sur les probabilités réelles de hausse ou de baisse du marché, mais sur un principe d'**absence d'opportunité d'arbitrage**. En construisant un arbre binomial, nous avons vu qu'il est possible de dupliquer les flux de l'option grâce à un portefeuille de couverture (hedging) composé de l'actif risqué et de l'actif sans risque.
+
+Notre implémentation numérique a validé la méthode de "programmation dynamique", confirmant que le prix de l'option à l'instant $t=0$ correspond à l'espérance de ses flux futurs actualisés sous une probabilité unique : la **probabilité risque-neutre** $\mathbb{P}^*$.
 
 
- **Mesure Martingale Équivalente (EMM) $\mathbb{P}^*$** : L'existence d'une EMM est équivalente à l'AAO (1er Théorème Fondamental). $\mathbb{P}^*$ est une mesure sous laquelle les prix actualisés $\tilde{S}_t = S_t / S^0_t$ sont une martingale.
- **Probabilité Neutre au Risque ($p^*$)** : Dans ce modèle complet (l'EMM est unique), $p^*$ est donnée par :
-   $$p^{*} = \mathbb{P}^*[S_1=S_0 u] = \frac{(1+r)-d}{u-d}$$
-* **Prix d'Arbitrage** : Le prix $\overline{x}$ d'un payoff $h$ à l'instant $T=1$ est son espérance actualisée sous $\mathbb{P}^*$ :
-    $$\overline{x} = \frac{1}{1+r} \mathbb{E}^{\mathbb{P}^{*}}[h] = \frac{1}{1+r} \left( p^* h(S_0 u) + (1-p^*) h(S_0 d) \right)$$
+Si le modèle CRR est puissant par sa simplicité et sa flexibilité numérique, il reste une approximation discrète de la réalité des marchés financiers qui sont, eux, continus.
 
+Il existe cependant un lien fondamental entre notre approche discrète et les modèles continus utilisés en salle de marché. Lorsque l'on augmente le nombre de périodes $N$ vers l'infini (faisant tendre le pas de temps $\Delta t$ vers 0), l'arbre binomial converge vers une distribution log-normale des prix.
 
-
-------------------------------------------------------------------------
-
-### Chapitre 5 : Marchés à temps discret (T périodes)
-
-Le marché est défini par un horizon $T$ et une **Filtration** $\mathbb{F} = (\mathcal{F}_t)_{t=0}^T$ qui modélise l'information disponible.
-
-* **Processus de Prix Actualisé** : $\tilde{S}_t = S_t / S^0_t$.
-* **Portefeuille Auto-Finançant** : Une stratégie $\pi = (\pi^0, \pi^1)$ est auto-finançante si la variation de la richesse $X_t$ est due uniquement aux variations des actifs. La richesse actualisée $\tilde{X}_t$ est :
-    $$\tilde{X}_{t}^{(x,\pi)}=x+\sum_{i=1}^{t}\pi_{i}\cdot(\tilde{S}_{i}-\tilde{S}_{i-1}).$$
-    où $x$ est le capital initial et $\pi_i$ est le nombre d'actions risquées détenues sur $[i-1, i)$, un processus **prévisible** (i.e., $\pi_i$ est $\mathcal{F}_{i-1}$-mesurable).
+Mathématiquement, la limite de la formule de Cox-Ross-Rubinstein correspond exactement à la célèbre **formule de Black-Scholes (1973)**. Le modèle binomial peut donc être vu comme la discrétisation naturelle du mouvement brownien géométrique utilisé par Black et Scholes. Cette convergence justifie l'utilisation du modèle CRR non seulement comme outil pédagogique, mais aussi comme méthode numérique robuste pour valoriser des options complexes (comme les options Américaines) là où les formules fermées de Black-Scholes atteignent leurs limites (suppose que l'option ne peut être exercée qu'à maturité).
 
